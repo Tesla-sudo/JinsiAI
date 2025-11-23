@@ -10,6 +10,6 @@ This is the frontend part of the Armely Hackathon project.
 ```bash
 npm install
 
-```bash
+
 npm run dev
 
