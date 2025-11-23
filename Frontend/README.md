@@ -28,7 +28,7 @@ Pitch Deck: [JinsiAI_Pitch_Deck.pdf](pitch-deck/JinsiAI_Pitch_Deck.pdf)
 - **Deployment**: Azure Static Web Apps (1-click deploy ready)
 - **PWA Ready**: Service worker + manifest included
 
-## Frontend Project Structure
+## Frontend Project Structure (view it well in edit mode)
 
 Frontend/
 ├── public/
