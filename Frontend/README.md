@@ -31,8 +31,9 @@ Pitch Deck: [JinsiAI_Pitch_Deck.pdf](pitch-deck/JinsiAI_Pitch_Deck.pdf)
 ## Frontend Project Structure
 
 Frontend/
+
 ├── public/
----
+
 │   ├── vite.svg
 │   └── pwa-192.png / pwa-512.png          # App icons
 ├── src/
