@@ -31,27 +31,16 @@ Pitch Deck: [JinsiAI_Pitch_Deck.pdf](pitch-deck/JinsiAI_Pitch_Deck.pdf)
 ## Frontend Project Structure
 
 Frontend/
-
 ├── public/
-
 │   ├── vite.svg
-
 │   └── pwa-192.png / pwa-512.png          # App icons
-
 ├── src/
-
 │   ├── components/
-
 │   │   ├── ChatBubble.jsx                  # Beautiful message bubbles + diagnosis card
-
 │   │   ├── PhotoUploader.jsx               # Camera + mock AI disease diagnosis
-
 │   │   ├── VoiceRecorder.jsx               # Voice input (ready for Whisper API)
-
 │   │   └── TypingIndicator.jsx            # "AI is typing..." animation
-
 │   ├── pages/
-
 │   │   └── Home.jsx                        # Main chat + cards + floating input bar
 │   ├── App.jsx
 │   ├── main.jsx
