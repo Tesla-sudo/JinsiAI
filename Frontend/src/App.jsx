@@ -1,14 +1,19 @@
 import { useState } from 'react'
-import './App.css'
+import Home from "./pages/Home"
+import AdminDashboard from './pages/AdminDashboard'
 
-function App() {
- 
+export default function App() {
+  const [isAdmin, setIsAdmin] = useState(false)
 
   return (
     <>
-     Hello,Frontend working
+      {isAdmin ? <AdminDashboard /> : <Home />}
+      <button
+        onClick={() => setIsAdmin(!isAdmin)}
+        className="fixed top-4 right-4 bg-black/70 text-white px-3 py-1.5 rounded text-xs z-50"
+      >
+        {isAdmin ? "Farmer View" : "Admin"}
+      </button>
     </>
   )
 }
-
-export default App

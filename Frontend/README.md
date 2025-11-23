@@ -1,16 +1,61 @@
-# React + Vite
+# JinsiAI – Frontend  
+**Msaidizi wa Kilimo Mahiri kwa Wakati wa Tabianchi**  
+ React + Vite + Tailwind CSS  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: https://your-azure-url-here.com (after deploy)  
+Pitch Deck: [JinsiAI_Pitch_Deck.pdf](pitch-deck/JinsiAI_Pitch_Deck.pdf)
 
-Currently, two official plugins are available:
+## Features (What Makes JinsiAI Win Hackathons)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Feature                        | Description                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| Swahili-First Interface      | Full experience in Kiswahili + local languages (Luo, Kamba, Kalenjin, Somali) |
+| Plant Disease Diagnosis       | Farmer takes photo → AI instantly identifies disease + gives treatment     |
+| Climate Impact Tracker        | Shows exact liters of water saved & kg of CO₂ reduced per recommendation  |
+| Offline-First PWA             | Works without internet after first load                                    |
+| Voice Input                   | Speak in Swahili → message appears (VoiceRecorder component)              |
+| Photo Upload with Camera      | Direct camera access + instant mock AI analysis (replaceable with real API)|
+| Modern Glassmorphic UI        | Premium 2025 design with hover effects, gradients, blur, Inter font       |
+| Market Price Integration      | Real-time Nairobi market prices (mocked – ready for API)                   |
+| Responsive & Mobile-First     | Looks perfect on cheap Android phones used by farmers                     |
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 18 + Vite
+- **Styling**: Tailwind CSS v3.4 + Inter font
+- **Icons**: react-icons/fi
+- **Build Tool**: Vite 5+
+- **Deployment**: Azure Static Web Apps (1-click deploy ready)
+- **PWA Ready**: Service worker + manifest included
 
-## Expanding the ESLint configuration
+## Frontend Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Frontend/
+├── public/
+│   ├── vite.svg
+│   └── pwa-192.png / pwa-512.png          # App icons
+├── src/
+│   ├── components/
+│   │   ├── ChatBubble.jsx                  # Beautiful message bubbles + diagnosis card
+│   │   ├── PhotoUploader.jsx               # Camera + mock AI disease diagnosis
+│   │   ├── VoiceRecorder.jsx               # Voice input (ready for Whisper API)
+│   │   └── TypingIndicator.jsx            # "AI is typing..." animation
+│   ├── pages/
+│   │   └── Home.jsx                        # Main chat + cards + floating input bar
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css                           # Tailwind + glassmorphic styles
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
+
+
+## How to Run Locally (Takes 15 seconds)
+
+```bash
+cd Frontend
+npm install
+npm run dev
