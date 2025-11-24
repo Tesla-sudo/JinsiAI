@@ -2,10 +2,22 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const aiRoutes = require('./aiRoutes');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-
+app.use(cors({
+  origin: 'http://localhost:5173',
+}));
+// ===== ADD THIS LINE =====
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.mp3')) {
+      res.setHeader('Content-Type', 'audio/mpeg');
+    }
+  }
+}));
+// =========================
 // File upload folders
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

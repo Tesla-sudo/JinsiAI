@@ -12,10 +12,17 @@ module.exports = (upload) => {
   const AZURE_REGION = process.env.AZURE_REGION;
 
 
-const callGPT4 = async (text) => {
+  const callGPT4 = async (text) => {
     const response = await axios.post(
       `${process.env.AZURE_OPENAI_ENDPOINT}/openai/deployments/${process.env.AZURE_OPENAI_DEPLOYMENT}/chat/completions?api-version=2025-01-01-preview`,
-      { messages: [{ role: "user", content: text }] },
+      {
+        messages: [
+          {
+            role: "user",
+            content: text   // <-- Azure expects plain string here
+          }
+        ]
+      },
       {
         headers: {
           "Content-Type": "application/json",
@@ -23,8 +30,17 @@ const callGPT4 = async (text) => {
         }
       }
     );
-    return response.data.choices[0].message.content;
+  
+    const message = response.data.choices[0].message;
+  
+    console.log("AZURE RAW:", message);
+  
+    return message.content;  // <-- correct final text
   };
+  
+  
+  
+  
   const analyzeImageFullJSON = async (imagePath) => {
     const imageData = fs.readFileSync(imagePath);
     const response = await axios.post(
@@ -122,22 +138,34 @@ const callGPT4 = async (text) => {
   };
 
   const textToSpeech = async (text, language = "en-US", voice = "en-US-JennyNeural") => {
-    const ttsResponse = await axios.post(
-      `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
-      `<speak version='1.0' xml:lang='${language}'><voice name='${voice}'>${text}</voice></speak>`,
-      {
-        headers: {
-          "Ocp-Apim-Subscription-Key": process.env.AZURE_SPEECH_KEY,
-          "Content-Type": "application/ssml+xml",
-          "X-Microsoft-OutputFormat": "audio-16khz-128kbitrate-mono-mp3",
-        },
-        responseType: "arraybuffer", // important! returns raw audio
-      }
-    );
+    try {
+      const ttsResponse = await axios.post(
+        `https://${AZURE_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`,
+        `<speak version='1.0' xml:lang='${language}'><voice name='${voice}'>${text}</voice></speak>`,
+        {
+          headers: {
+            "Ocp-Apim-Subscription-Key": process.env.AZURE_SPEECH_KEY,
+            "Content-Type": "application/ssml+xml",
+            "X-Microsoft-OutputFormat": "audio-16khz-128kbitrate-mono-mp3",
+          },
+          responseType: "arraybuffer",
+        }
+      );
   
-    const ttsPath = `uploads/audio/response-${Date.now()}.mp3`;
-    fs.writeFileSync(ttsPath, ttsResponse.data);
-    return ttsPath;
+      // ✅ Log size to verify non-empty response
+      console.log("TTS Audio Buffer Size:", ttsResponse.data.byteLength, "bytes");
+  
+      if (ttsResponse.data.byteLength === 0) {
+        throw new Error("Empty TTS response");
+      }
+  
+      const ttsPath = `uploads/audio/response-${Date.now()}.mp3`;
+      await fs.promises.writeFile(ttsPath, Buffer.from(ttsResponse.data));
+      return ttsPath;
+    } catch (err) {
+      console.error("TTS Error:", err.message);
+      throw err;
+    }
   };
   
 
