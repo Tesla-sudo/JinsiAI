@@ -3,6 +3,7 @@ import ChatBubble from '../components/ChatBubble'
 import PhotoUploader from "../components/PhotoUploader"
 import VoiceRecorder from '../components/VoiceRecorder'
 import TypingIndicator from '../components/TypingIndicator'
+import CopilotEmbed from "../components/CopilotEmbed"
 import { FiSun, FiDroplet, FiDollarSign, FiHeart, FiSend } from "react-icons/fi"
 
 export default function Home() {
@@ -105,6 +106,7 @@ const handleDiagnosis = (result) => {
           </button>
         </div>
       </div>
+      <CopilotEmbed />
     </div>
   )
 }
