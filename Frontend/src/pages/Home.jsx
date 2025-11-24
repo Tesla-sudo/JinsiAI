@@ -12,6 +12,7 @@ const [messages, setMessages] = useState([{
   isBot: true,
   time: "6:30 AM"
 }])
+// eslint-disable-next-line no-unused-vars
 const [_, setDiagnosis] = useState(null)
 
   // THIS IS THE MISSING FUNCTION — NOW FIXED
