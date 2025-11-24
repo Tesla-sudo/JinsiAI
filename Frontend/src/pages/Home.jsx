@@ -6,14 +6,13 @@ import TypingIndicator from "../components/TypingIndicator"
 import { FiSun, FiDroplet, FiDollarSign, FiHeart, FiSend } from "react-icons/fi"
 
 export default function Home() {
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      text: "Habari ya asubuhi!\n\nMimi ni *JinsiAI* — msaidizi wako wa kilimo mahiri.\nPiga picha ya shamba lako au nizungumzie kwa Kiswahili, nitakusaidia mara moja!",
-      isBot: true,
-      time: "6:30 AM"
-    }
-  ])
+const [messages, setMessages] = useState([{
+  id: 1,
+  text: "Habari ya asubuhi! ☀️\n\nMimi ni *JinsiAI* — msaidizi wako wa kilimo mahiri.\nPiga picha ya shamba lako, nitakutambua ugonjwa na kukushauri jinsi ya kulinda mazao yako na mazingira!",
+  isBot: true,
+  time: "6:30 AM"
+}])
+const [_, setDiagnosis] = useState(null)
 
   // THIS IS THE MISSING FUNCTION — NOW FIXED
   const handleBackendResult = (result) => {
