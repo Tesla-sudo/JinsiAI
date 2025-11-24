@@ -1,25 +1,30 @@
 import { useState } from 'react'
-import { FiMic, FiMicOff } from 'react-icons/fi'
+import { FiMic, FiMicOff } from "react-icons/fi"
 
-export default function VoiceRecorder({ onTranscription }) {
-  const [recording, setRecording] = useState(false)
+export default function VoiceRecorder() {
+  const [isRecording, setIsRecording] = useState(false)
 
-  const toggle = () => {
-    setRecording(!recording)
-    if (!recording) {
+  const handleClick = () => {
+    setIsRecording(prev => !prev)
+    // Optional: add real recording later
+    if (!isRecording) {
       setTimeout(() => {
-        onTranscription("Mahindi yangu yana madoa mekundu")
-        setRecording(false)
-      }, 4000)
+        alert("Voice recording will be added in final version! For now, just type or take photo")
+        setIsRecording(false)
+      }, 2000)
     }
   }
 
   return (
     <button
-      onClick={toggle}
-      className={`p-4 rounded-full transition ${recording ? 'bg-red-500 text-white animate-pulse' : 'bg-gray-200'}`}
+      onClick={handleClick}
+      className={`p-4 rounded-full shadow-xl transition-all ${
+        isRecording 
+          ? "bg-red-500 animate-pulse" 
+          : "bg-gradient-to-r from-emerald-500 to-green-600 hover:scale-110"
+      } text-white`}
     >
-      {recording ? <FiMicOff size={24} /> : <FiMic size={24} />}
+      {isRecording ? <FiMicOff className="text-2xl" /> : <FiMic className="text-2xl" />}
     </button>
   )
 }

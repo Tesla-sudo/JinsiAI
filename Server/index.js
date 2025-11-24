@@ -2,60 +2,47 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
-const cors = require('cors');
 const { pushToCSV } = require('./dataPush');
 const aiRoutes = require('./aiRoutes');
 
 const app = express();
 
-// CORS — allows frontend on port 5173
-app.use(cors({ origin: "http://localhost:5173" }));
+// CORS — allows localhost + future live URL
+app.use(cors({
+  origin: ["http://localhost:5173", "https://your-deployed-frontend-url.azurestaticapps.net"]
+}));
 app.use(express.json());
 
-//Middleware
-app.use(cors());
-app.use(express.json());
-app.use('/uploads', express.static('uploads'))
+// Serve uploaded files
+app.use('/uploads', express.static('uploads'));
 
-// File upload folders
+// Multer config
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
+  destination: (req, file, cb) => {
     if (file.mimetype.startsWith('image')) cb(null, 'uploads/images');
     else if (file.mimetype.startsWith('audio')) cb(null, 'uploads/audio');
     else cb(null, 'uploads/others');
   },
-  filename: function (req, file, cb) {
+  filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   }
 });
 const upload = multer({ storage });
 
-<<<<<<< HEAD
-// CRITICAL FIX: Mount routes at root so /process works
-app.use('/', aiRoutes(upload));           // ← THIS LINE ADDED
-app.use('/api/ai', aiRoutes(upload));     // ← Keep old one too
-
-// Serve uploaded files
-app.use('/uploads', express.static('uploads'));
-=======
-// AI routes with data push
+// Mount AI routes
+app.use('/', aiRoutes(upload, pushToCSV));
 app.use('/api/ai', aiRoutes(upload, pushToCSV));
 
-//Serve CSV for Power BI 
-app.get('data/farmer_data.csv', (req, res) => {
-  res.sendFile(path.join(__dirname, 'farmer_data.csv'));
-})
->>>>>>> b7146ae (configured some routes)
+// Optional: Serve CSV
+app.get('/data/farmer_data.csv', (req, res) => {
+  res.sendFile(path.join(__dirname, 'server', 'farmer_data.csv'));
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-<<<<<<< HEAD
-  console.log(`CORS enabled for http://localhost:5173`);
-  console.log(`POST /process → ready for AI magic`);
+  console.log(`CORS enabled`);
+  console.log(`POST /process → READY`);
+  console.log(`CSV saved at: ${path.join(__dirname, 'server', 'farmer_data.csv')}`);
 });
-=======
-  console.log(`CSV Location: ${path.join(__dirname, 'farmer_data.csv')}`)
-});
->>>>>>> b7146ae (configured some routes)
