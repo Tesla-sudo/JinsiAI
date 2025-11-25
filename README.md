@@ -63,8 +63,12 @@ cd Frontend
 npm install
 npm run dev
 
+
 ----
 
 # Backend
 
-This is where the backend's documentation goes
+## How to run locally
+cd server 
+npm install
+npm run start 
