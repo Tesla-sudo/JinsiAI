@@ -1,28 +1,67 @@
-// server/dataPush.js
 const fs = require('fs');
 const path = require('path');
 
 const CSV_FILE = path.join(__dirname, 'data', 'farmer_data.csv');
 
-function pushToAnalytics(data) {
-  const row = [
-   new Date().toISOString(),
-   data.farmerId || 'unknown',
-   data.eventType || 'query',
-   (data.disease || 'None').replace(/,/g, ''),
-   data.co2SavedKg || 0,
-   data.waterSavedLiters || 0,
-   data.location || 'Kenya',
-   data.incomeImpactKsh || 0,
-   data.cropType || 'Unknown',
-   `"${(data.adviceGiven || '').replace(/"/g, '""').substring(0, 500)}"`
- ].join(',') + '\n';
-
- fs.appendFileSync(CSV_FILE, row);
- console.log('Data saved → farmer_data.csv', data.eventType);
+// Auto-create folder + header if missing
+if (!fs.existsSync(path.dirname(CSV_FILE))) {
+  fs.mkdirSync(path.dirname(CSV_FILE), { recursive: true });
+}
+if (!fs.existsSync(CSV_FILE)) {
+  const header = "timestamp,farmerId,eventType,disease,cropType,co2SavedKg,waterSavedLiters,location,incomeImpactKsh,adviceGiven\n";
+  fs.writeFileSync(CSV_FILE, header);
+  console.log("Created new farmer_data.csv");
 }
 
-module.exports = { pushToAnalytics };
+const pushToCSV = (data) => {
+  try {
+    const line = [
+      new Date().toISOString(),
+      data.farmerId || "anonymous",
+      data.eventType || "query",
+      (data.disease || "").replace(/,/g, " "),
+      (data.cropType || "").replace(/,/g, " "),
+      data.co2SavedKg || 0,
+      data.waterSavedLiters || 0,
+      (data.location || "Unknown").replace(/,/g, " "),
+      data.incomeImpactKsh || 0,
+      `"${(data.adviceGiven || "").replace(/"/g, '""').substring(0, 500)}"`
+    ].join(",") + "\n";
+
+    fs.appendFileSync(CSV_FILE, line);
+    console.log("✅ Data saved to farmer_data.csv");
+  } catch (err) {
+    console.error("❌ CSV save failed:", err.message);
+  }
+};
+
+module.exports = { pushToCSV };
+
+// // server/dataPush.js
+// const fs = require('fs');
+// const path = require('path');
+
+// const CSV_FILE = path.join(__dirname, 'data', 'farmer_data.csv');
+
+// function pushToAnalytics(data) {
+//   const row = [
+//    new Date().toISOString(),
+//    data.farmerId || 'unknown',
+//    data.eventType || 'query',
+//    (data.disease || 'None').replace(/,/g, ''),
+//    data.co2SavedKg || 0,
+//    data.waterSavedLiters || 0,
+//    data.location || 'Kenya',
+//    data.incomeImpactKsh || 0,
+//    data.cropType || 'Unknown',
+//    `"${(data.adviceGiven || '').replace(/"/g, '""').substring(0, 500)}"`
+//  ].join(',') + '\n';
+
+//  fs.appendFileSync(CSV_FILE, row);
+//  console.log('Data saved → farmer_data.csv', data.eventType);
+// }
+
+// module.exports = { pushToAnalytics };
 
 
 
