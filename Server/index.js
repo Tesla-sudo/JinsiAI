@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const multer = require('multer');
-const { pushToCSV } = require('./dataPush');
-const aiRoutes = require('./aiRoutes');
+const { pushToCSV } = require('./dataPush.js');
+const aiRoutes = require('./aiRoutes.js');
 require('dotenv').config();
 
 const app = express();

@@ -1,0 +1,7 @@
+timestamp,farmerId,eventType,disease,cropType,co2SavedKg,waterSavedLiters,location,incomeImpactKsh,adviceGiven
+2025-11-25T23:29:45.028Z,anonymous,greeting,,,0,0,Unknown,0,"Shikamoo!"
+2025-11-25T23:29:58.629Z,farmer_1764113398629,voice_or_text,None,,0.4,100,Unknown,0,"Tomato blight ni ugonjwa unaoshambulia nyanya, husababisha majani kuwa na madoa ya kahawia au kijivu, na hatimaye kunyauka. Kuna aina mbili kuu: Early blight (Alternaria) na Late blight (Phytophthora). Early blight huanza na madoa ya duara kwenye majani ya chini, Late blight huleta madoa makubwa, majani yanashuka na matunda kuoza.
+
+**Dalili kuu:**  
+- Majani yana madoa ya kahawia au kijivu  
+- Maj"
