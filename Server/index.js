@@ -4,7 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const { pushToCSV } = require('./dataPush');
 const aiRoutes = require('./aiRoutes');
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express();
 
@@ -13,9 +13,9 @@ app.use(cors({
   origin: ["http://localhost:5173", "https://your-deployed-frontend-url.azurestaticapps.net"]
 }));
 app.use(express.json());
-app.use(cors({
-  origin: 'http://localhost:5173',
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173',
+// }));
 // ===== ADD THIS LINE =====
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
   setHeaders: (res, filePath) => {

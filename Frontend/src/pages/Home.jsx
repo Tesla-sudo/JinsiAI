@@ -1,89 +1,283 @@
 // src/pages/Home.jsx
-import { useState, useRef, useEffect } from "react"
-import ChatBubble from "../components/ChatBubble"
-import PhotoUploader from "../components/PhotoUploader"
-import VoiceRecorder from "../components/VoiceRecorder"
-import { processMessage, processVoice } from "../api/backend"
-import { FiSend } from "react-icons/fi"
+import { useState, useEffect, useRef } from 'react'
+import PhotoUploader from '../components/PhotoUploader'
+import VoiceRecorder from '../components/VoiceRecorder'
+import TypingIndicator from '../components/TypingIndicator'
+import { processMessage, processVoice } from '../api/backend'
+import { FiSend } from 'react-icons/fi'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function Home() {
   const [messages, setMessages] = useState([
-    { id: 1, text: "Karibu JinsiAI! Piga picha, andika au sema — nitakusaidia mara moja!", isBot: true, time: "Sasa" }
+    {
+      id: 1,
+      role: 'assistant',
+      content: "Karibu JinsiAI! Piga picha ya shamba lako, sema kwa sauti, au andika — nitakusaidia mara moja!",
+      time: new Date().toLocaleTimeString('sw-KE', { hour: '2-digit', minute: '2-digit' })
+    }
   ])
-  const [inputText, setInputText] = useState("")
+  const [inputText, setInputText] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef(null)
 
-  const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
 
-  const handleResult = (result) => {
-    setIsTyping(false)
-    if (result.success) {
-      setMessages(prev => [...prev, {
-        id: Date.now(),
-        isBot: true,
-        text: result.gptOutput || result.textResponse,
-        time: "Sasa"
-      }])
-    }
+  useEffect(() => {
     scrollToBottom()
+  }, [messages])
+
+  const addMessage = (role, content, type = 'text', extra = {}) => {
+    setMessages(prev => [...prev, {
+      id: Date.now() + Math.random(),
+      role,
+      content,
+      type,
+      time: new Date().toLocaleTimeString('sw-KE', { hour: '2-digit', minute: '2-digit' }),
+      ...extra
+    }])
   }
 
-  const sendText = async () => {
+  const handleTextSend = async () => {
     if (!inputText.trim()) return
-    setMessages(prev => [...prev, { id: Date.now(), isBot: false, text: inputText, time: "Sasa" }])
+    const userText = inputText.trim()
+    addMessage('user', userText)
+    setInputText('')
     setIsTyping(true)
-    setInputText("")
+
     try {
-      const res = await processMessage({ text: inputText, language: "sw" })
-      handleResult(res)
-    } catch { setIsTyping(false) }
+      const result = await processMessage({ text: userText, language: 'sw' })
+      if (result.success) {
+        addMessage('assistant', result.gptOutput || result.textResponse || "Samahani, sikuelewa vizuri.")
+      } else {
+        addMessage('assistant', "Hitilafu: " + (result.message || "Jaribu tena."))
+      }
+    // eslint-disable-next-line no-unused-vars
+    } catch (err) {
+      addMessage('assistant', "Hitilafu ya mtandao. Angalia muunganisho wako.")
+    } finally {
+      setIsTyping(false)
+    }
   }
 
-  const handleVoice = async (audioBlob) => {
+  const handlePhotoResult = (result) => {
     setIsTyping(true)
-    setMessages(prev => [...prev, { id: Date.now(), isBot: false, text: "[Voice Message]", time: "Sasa" }])
-    try {
-      const res = await processVoice(audioBlob)
-      handleResult(res)
-    } catch { setIsTyping(false) }
+    if (result.success) {
+      addMessage('assistant', result.gptOutput || "Picha imechanganuliwa vizuri!", 'text')
+    } else {
+      addMessage('assistant', result.gptOutput || "Picha haikupakiwa vizuri. Jaribu tena.")
+    }
+    setIsTyping(false)
   }
 
-  useEffect(() => { scrollToBottom() }, [messages])
+  const handleVoiceResult = async (audioBlob) => {
+    addMessage('user', "Sauti imetumwa", 'voice')
+    setIsTyping(true)
+
+    try {
+      const result = await processVoice(audioBlob)
+      if (result.success) {
+        addMessage('assistant', result.textResponse || "Sikukusikia vizuri.", 'voice', {
+          audioUrl: result.audioFile ? `http://localhost:5000/${result.audioFile.replace(/\\/g, '/')}` : null
+        })
+        // Auto-play response
+        if (result.audioFile) {
+          const audio = new Audio(`http://localhost:5000/${result.audioFile.replace(/\\/g, '/')}`)
+          audio.play().catch(() => {})
+        }
+      } else {
+        addMessage('assistant', "Sauti haikueleweka. Jaribu tena.")
+      }
+    // eslint-disable-next-line no-unused-vars
+    } catch (err) {
+      addMessage('assistant', "Hitilafu ya sauti. Jaribu tena.")
+    } finally {
+      setIsTyping(false)
+    }
+  }
+
+  const renderMessage = (msg) => {
+    const isUser = msg.role === 'user'
+    const bubbleClass = isUser
+      ? "bg-green-600 text-white rounded-2xl rounded-br-none"
+      : "bg-white text-gray-800 border border-gray-200 rounded-2xl rounded-bl-none"
+
+    return (
+      <div key={msg.id} className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+        <div className={`max-w-xs md:max-w-md px-5 py-4 ${bubbleClass} shadow-lg`}>
+          {/* User voice message */}
+          {msg.type === 'voice' && isUser && (
+            <div className="text-sm opacity-90">Sauti yako</div>
+          )}
+
+          {/* AI voice response */}
+          {msg.type === 'voice' && !isUser && msg.audioUrl && (
+            <div className="mb-3">
+              <audio controls src={msg.audioUrl} className="w-full rounded" />
+              <p className="text-xs opacity-75 mt-1">JinsiAI inasema</p>
+            </div>
+          )}
+
+          {/* Text content */}
+          {msg.content && (
+            <div className="prose prose-sm max-w-none">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {msg.content}
+              </ReactMarkdown>
+            </div>
+          )}
+
+          <div className="text-xs opacity-70 mt-2 text-right">
+            {msg.time}
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 pb-32">
-      <header className="bg-white shadow-lg p-6 text-center">
-        <h1 className="text-4xl font-bold text-green-700">JinsiAI</h1>
-        <p className="text-green-600">Msaidizi Wako wa Kilimo Mahiri</p>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-lime-50 flex flex-col">
+      {/* Header */}
+      <header className="bg-white shadow-xl p-6 text-center border-b-4 border-green-600">
+        <h1 className="text-5xl font-black text-green-700">JINSIAI</h1>
+        <p className="text-xl text-green-600 font-medium mt-2">Msaidizi Wako wa Kilimo Mahiri</p>
       </header>
 
-      <div className="max-w-4xl mx-auto px-6 py-8 space-y-6">
-        {messages.map(m => <ChatBubble key={m.id} message={m} />)}
-        {isTyping && <div className="text-center text-gray-600">JinsiAI anaandika...</div>}
-        <div ref={messagesEndRef} />
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto px-4 py-8 max-w-4xl mx-auto w-full">
+        <div className="space-y-4">
+          {messages.map(renderMessage)}
+          {isTyping && <TypingIndicator />}
+          <div ref={messagesEndRef} />
+        </div>
       </div>
 
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6">
-        <div className="bg-white rounded-full shadow-2xl p-4 flex items-center gap-4 border-4 border-green-200">
-          <PhotoUploader onResult={handleResult} />
-          <VoiceRecorder onAudioResult={handleVoice} />
-          <input
-            type="text"
-            value={inputText}
-            onChange={e => setInputText(e.target.value)}
-            onKeyPress={e => e.key === 'Enter' && sendText()}
-            placeholder="Andika au piga picha..."
-            className="flex-1 text-lg focus:outline-none"
-          />
-          <button onClick={sendText} className="p-4 bg-green-600 text-white rounded-full hover:scale-110 transition">
-            <FiSend className="text-2xl" />
-          </button>
+      {/* Input Bar */}
+      <div className="bg-white border-t-4 border-green-600 p-4 shadow-2xl">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-green-100 to-emerald-100 rounded-3xl p-4 shadow-inner flex items-center gap-4">
+            <PhotoUploader onResult={handlePhotoResult} />
+            <VoiceRecorder onAudioResult={handleVoiceResult} />
+
+            <input
+              type="text"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleTextSend()}
+              placeholder="Andika swali lako hapa..."
+              className="flex-1 px-6 py-4 text-lg rounded-full focus:outline-none focus:ring-4 focus:ring-green-300"
+            />
+
+            <button
+              onClick={handleTextSend}
+              disabled={!inputText.trim() || isTyping}
+              className={`p-5 rounded-full transition-all shadow-xl ${
+                inputText.trim() && !isTyping
+                  ? "bg-gradient-to-r from-green-600 to-emerald-700 hover:scale-110 text-white"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+            >
+              <FiSend className="text-2xl" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
   )
 }
+
+
+
+
+
+// // src/pages/Home.jsx
+// import { useState, useRef, useEffect } from "react"
+// import ChatBubble from "../components/ChatBubble"
+// import PhotoUploader from "../components/PhotoUploader"
+// import VoiceRecorder from "../components/VoiceRecorder"
+// import { processMessage, processVoice } from "../api/backend"
+// import { FiSend } from "react-icons/fi"
+
+// export default function Home() {
+//   const [messages, setMessages] = useState([
+//     { id: 1, text: "Karibu JinsiAI! Piga picha, andika au sema — nitakusaidia mara moja!", isBot: true, time: "Sasa" }
+//   ])
+//   const [inputText, setInputText] = useState("")
+//   const [isTyping, setIsTyping] = useState(false)
+//   const messagesEndRef = useRef(null)
+
+//   const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+
+//   const handleResult = (result) => {
+//     setIsTyping(false)
+//     if (result.success) {
+//       setMessages(prev => [...prev, {
+//         id: Date.now(),
+//         isBot: true,
+//         text: result.gptOutput || result.textResponse,
+//         time: "Sasa"
+//       }])
+//     }
+//     scrollToBottom()
+//   }
+
+//   const sendText = async () => {
+//     if (!inputText.trim()) return
+//     setMessages(prev => [...prev, { id: Date.now(), isBot: false, text: inputText, time: "Sasa" }])
+//     setIsTyping(true)
+//     setInputText("")
+//     try {
+//       const res = await processMessage({ text: inputText, language: "sw" })
+//       handleResult(res)
+//     } catch { setIsTyping(false) }
+//   }
+
+//   const handleVoice = async (audioBlob) => {
+//     setIsTyping(true)
+//     setMessages(prev => [...prev, { id: Date.now(), isBot: false, text: "[Voice Message]", time: "Sasa" }])
+//     try {
+//       const res = await processVoice(audioBlob)
+//       handleResult(res)
+//     } catch { setIsTyping(false) }
+//   }
+
+//   useEffect(() => { scrollToBottom() }, [messages])
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 pb-32">
+//       <header className="bg-white shadow-lg p-6 text-center">
+//         <h1 className="text-4xl font-bold text-green-700">JinsiAI</h1>
+//         <p className="text-green-600">Msaidizi Wako wa Kilimo Mahiri</p>
+//       </header>
+
+//       <div className="max-w-4xl mx-auto px-6 py-8 space-y-6">
+//         {messages.map(m => <ChatBubble key={m.id} message={m} />)}
+//         {isTyping && <div className="text-center text-gray-600">JinsiAI anaandika...</div>}
+//         <div ref={messagesEndRef} />
+//       </div>
+
+//       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-4xl px-6">
+//         <div className="bg-white rounded-full shadow-2xl p-4 flex items-center gap-4 border-4 border-green-200">
+//           <PhotoUploader onResult={handleResult} />
+//           <VoiceRecorder onAudioResult={handleVoice} />
+//           <input
+//             type="text"
+//             value={inputText}
+//             onChange={e => setInputText(e.target.value)}
+//             onKeyPress={e => e.key === 'Enter' && sendText()}
+//             placeholder="Andika au piga picha..."
+//             className="flex-1 text-lg focus:outline-none"
+//           />
+//           <button onClick={sendText} className="p-4 bg-green-600 text-white rounded-full hover:scale-110 transition">
+//             <FiSend className="text-2xl" />
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 
 
 

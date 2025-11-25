@@ -3,3 +3,21 @@ Timestamp,FarmerID,EventType,Disease,CO2_Saved_Kg,Water_Saved_Liters,Location,In
 2025-11-24T15:42:26.352Z,farmer-1763998939907,text_voice_query,gani au shida ya kilimo ambayo ungependa kujadiliwa?,0.1,5,Unknown,50,yaliyotajwa,Inaonekana kama uliomba utambuzi wa ugonjwa matibabu na ushauri mzuri wa hali ya hewa (pamoja na CO₂ iliyohifadhiwa na athari za mapato) lakini sioni mazao yaliyotajwa spishi za wanyama au muktad...
 2025-11-24T15:44:38.680Z,farmer-1763999067390,text_voice_query,Ikiwa mahindi yako yanaonyesha dalili kama vile:,0.1,5,Unknown,50,** kwa kawaida hujulikana kama *wadudu wa mahindi* na ni pamoja na wadudu kama vile:,**Wadudu wa mahindi** kwa kawaida hujulikana kama *wadudu wa mahindi* na ni pamoja na wadudu kama vile:  - **Minyoo ya jeshi ya kuanguka (Spodoptera frugiperda)** - **Mdume wa mahindi (Ostrinia nubila...
 2025-11-24T15:45:12.033Z,farmer-1763999021609,disease_diagnosis,uliopo kwenye picha hii**,0.45,28,Unknown,180,na mifugo kwa mbali,Inaonekana kumekuwa na kutokuelewana. Uchambuzi wa picha uliyotoa unaelezea kamera sio mmea mnyama au maudhui yanayohusiana na magonjwa. Hakuna dalili katika uchanganuzi wa ugonjwa wadudu au hali...
+2025-11-25T09:03:22.073Z,farmer-1764061385293,text_voice_query,wa chini,0.1,5,Unknown,50,baada ya kuvuna ili kupunguza maisha ya kuvu,"**Utambuzi:**
+Mlipuko wa mchele husababishwa na kuvu *Magnaporthe oryzae*. Dalili za kawaida ni pamoja na vidonda vyenye umbo la almasi, kijivu na mipaka nyeusi kwenye majani, na wakati mwingine kuoza..."
+2025-11-25T11:04:54.464Z,farmer-1764068677066,disease_diagnosis,Kulingana na uchanganuzi wa picha,0.45,28,Unknown,180,- **Rangi kuu:** Kijani (dalili ya afya,"**Muhtasari wa Uchambuzi wa Picha:**
+- **Jamii:** Majani ya mimea, aina zinazowezekana za nyasi/mazao
+- **Rangi kuu:** Kijani (dalili ya afya, lakini sio ya mwisho)
+- **Lebo:** Mazao, shina la mmea, n..."
+2025-11-25T11:14:00.371Z,farmer-1764069218408,disease_diagnosis,**,0.45,28,Unknown,180,au ugonjwa,"Kulingana na uchanganuzi wa picha uliotolewa, habari ifuatayo inapatikana:
+- **Jamii kuu:** Majani ya mimea (ujasiri mkubwa)
+- **Lebo:** Mazao, mmea wa ardhini, shina la mmea, kijani, nje, nyasi, mmea..."
+2025-11-25T11:43:26.747Z,farmer-1764070997761,text_voice_query,unaowezekana**,0.1,5,Unknown,50,yako,"Hujambo! Naona haujatoa maelezo kuhusu mazao yako, dalili, au picha. Ili kukusaidia na utambuzi wa magonjwa, matibabu, na ushauri mzuri wa hali ya hewa, ninahitaji habari:
+
+**Tafadhali niambie:**
+- Ma..."
+2025-11-25T11:44:22.590Z,farmer-1764071041180,disease_diagnosis,**Utambuzi:**,0.45,28,Unknown,180,ni pamoja na *kutu,"**Muhtasari wa Uchambuzi wa Picha:**  
+- Jamii: Majani ya mimea (alama: 0.86)
+- Rangi kubwa: Kijani  
+- Lebo kuu: mazao, mmea wa ardhini, shina la mmea, nyasi, nje, calamus  
+- Maelezo: ""karibu na nya..."
