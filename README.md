@@ -118,8 +118,9 @@ Every interaction saves a row with:
    cd JinsiAI/server
 
 ## How to run locally
+ ```bash
 cd Server 
-npm install
-create a .env file
-fill in your Azure secret keys
-npm run start 
+- npm install
+- create a .env file
+- fill in your Azure secret keys
+- npm run start 
