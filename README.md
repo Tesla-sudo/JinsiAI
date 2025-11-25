@@ -58,7 +58,6 @@ Frontend/
 
 ## How to Run Locally (Takes 15 seconds)
 
-```bash
 cd Frontend
 npm install
 npm run dev
