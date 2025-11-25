@@ -69,6 +69,6 @@ npm run dev
 # Backend
 
 ## How to run locally
-cd server 
+cd Server 
 npm install
 npm run start 
