@@ -64,11 +64,63 @@ npm install
 npm run dev
 
 
-----
 
-# Backend
+## Backend
+
+# JinsiAI Server  
+**AI-Powered Crop Disease Doctor & Climate-Smart Farming Advisor for Kenyan Farmers**
+
+JinsiAI is a Swahili-speaking AI assistant that helps farmers:
+- Diagnose crop diseases from photos
+- Get local, practical treatment advice
+- Receive water-saving & carbon-reducing farming tips
+- Chat naturally with warm greetings and responses
+
+Built with **Azure OpenAI (GPT-4 Vision)**, **Azure Speech-to-Text**, and **Node.js/Express**.
+
+---
+
+### Features
+- Real-time plant disease detection from images
+- Voice input in Kiswahili (with speech-to-text)
+- Warm, human-like greetings & conversation
+- Climate-smart farming recommendations
+- Location-aware advice (Kitui, Eldoret, Nyeri, etc.)
+- Saves every interaction to `data/farmer_data.csv` (Power BI ready!)
+
+---
+
+### Tech Stack
+- **Backend**: Node.js + Express
+- **AI**: Azure OpenAI (GPT-4 with vision), Azure Cognitive Services (Speech)
+- **File Handling**: Multer + FFmpeg (for audio conversion)
+- **Data Logging**: CSV export (`data/farmer_data.csv`)
+- **CORS**: Open for frontend (localhost + production)
+
+---
+Data Saved (data/farmer_data.csv)
+Every interaction saves a row with:
+
+- Timestamp
+- Farmer ID
+- Event type
+- Disease detected
+- CO₂ saved (kg)
+- Water saved (liters)
+- Location
+- Full advice given
+
+---
+
+### Setup Instructions
+
+1. **Clone & Enter Server Folder**
+   ```bash
+   cd JinsiAI/server
 
 ## How to run locally
 cd Server 
 npm install
+create a .env file
+fill in your Azure secret keys
 npm run start 
