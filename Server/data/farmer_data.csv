@@ -1,71 +1,173 @@
-timestamp,farmerId,eventType,co2SavedKg,adviceGiven
-2025-11-25T22:49:41.081Z,farmer_1764110981081,climate_smart_advice,,,0.5,80,kenya,0,"Tomato blight ni UKUNGU unaoshambulia nyanya, husababisha majani kuwa na madoa ya kahawia na kuoza. Tibu kwa kunyunyizia dawa ya Mancozeb au Copper oxychloride mara moja kwa wiki. 
+timestamp,farmerId,eventType,disease,cropType,co2SavedKg,waterSavedLiters,location,incomeImpactKsh,adviceGiven,conversationId
+2025-11-26T00:33:42.698Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha! Hapa naona nyanya zimeathirika na ugonjwa unaoitwa **Early Blight** (Madoa ya rangi ya kahawia au nyeusi kwenye matunda na majani), unaosababishwa na fangasi aitwaye *Alternaria solani*.
 
-Kwa Kenya, hakikisha unapanda nyanya kwenye udongo wenye rutuba na unabadilisha mahali pa kupanda kila msimu (crop rot"
-2025-11-25T22:53:23.684Z,farmer_1764111203684,climate_smart_advice,,,0.5,80,kenya,0,"Habari mkulima! Karibu sana.
+**Dalili:**
+- Madoa meusi au kahawia kwenye matunda na majani.
+- Majani yanakauka na kudhoofika.
+- Matunda yanaharibika na kuoza.
 
-1. Hakuna dalili za ugonjwa uliotumwa, lakini ukiona majani yanabadilika rangi au kuna madoa, tafadhali tuma picha au eleza zaidi.
-2. Kwa Kenya, ni vizuri kupanda mazao yanayostahimili ukame kama mahindi ya KDV-1 au mihogo. Fanya mzunguko wa mazao kama mahindi na kunde "
-2025-11-25T22:54:05.689Z,farmer_1764111245689,climate_smart_advice,,,0.5,80,kenya,0,"Mkulima, maharagwe yakigeuka ya njano na kuwa na wadudu weusi, mara nyingi ni dalili ya shambulio la aphids (vidudu vidogo weusi) au upungufu wa virutubisho.
+---
 
-1. **Tiba:** Nyunyizia dawa ya Karate au Duduthrin ili kuua wadudu. Pia, ongeza mbolea ya samadi au mboji ili kuongeza virutubisho kwenye udo"
-2025-11-25T22:57:10.398Z,farmer_1764111430397,climate_smart_advice,,,0.5,80,kenya,0,"Mkulima, madoa ya njano kwenye mahindi yako yanaweza kuwa dalili ya UKUNGU au upungufu wa virutubisho kama Nitrojeni. 
+### Matibabu na Udhibiti
 
-Tiba: Nyunyiza dawa ya ukungu kama Mancozeb, na ongeza mbolea ya samadi au mbolea ya Nitrojeni kama CAN.
+1. **Ondoa mimea iliyoathirika:** Kata na teketeza majani na matunda yaliyoathirika ili kuzuia kuenea kwa ugonjwa.
+2. **Tumia",
+2025-11-26T00:34:43.524Z,anon,voice_text,None,,0.4,100,Kenya,0,"Usiku mwema rafiki! Kama una swali lolote kuhusu kilimo au mimea yako, usisite kuuliza. Lala salama na uwe na ndoto njema!",
+2025-11-26T07:04:41.278Z,anon,voice_text,None,,0.4,100,Kenya,0,"Habari ya asubuhi! Karibu sana. Naweza kukusaidiaje leo kwenye shamba lako? Una tatizo la mimea, magonjwa, au unataka ushauri wa kilimo bora? Niambie tu!",
+2025-11-26T07:05:50.834Z,anon,voice_text,None,,0.4,100,Kenya,0,"Habari! Karibu sana. Mimi ni JinsiAI, daktari wa kilimo. Naweza kusaidia kugundua magonjwa ya mimea, kutoa tiba za kienyeji, na kukupa ushauri wa kuokoa maji na kupunguza hewa chafu shambani. Ungependa kujua nini leo?",
+2025-11-26T07:06:23.745Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha ya mmea wako. Hapa naona dalili za ugonjwa kwenye majani ya mboga, hasa kabichi. Majani yana madoa ya kahawia na yanakauka pembeni. Hii mara nyingi ni dalili ya **kutu ya majani (Leaf Spot/Bacterial Leaf Spot)** au **fungus ya Downy Mildew**.
 
-Kwa Kenya, hakikisha unapanda mahindi yanayostahimili ukame kama KDV-1, na"
-2025-11-25T22:57:30.307Z,farmer_1764111450306,climate_smart_advice,,,0.5,80,kenya,0,"Asante mkulima! Kwa kuwa uko Kenya, nitakupa ushauri wa jumla.
+### Ugonjwa:
+**Downy Mildew** au **Leaf Spot**  
+- Dalili: Madoa ya kahawia au kijivu pembeni ya jani, majani kukauka na kudhoofika.
+- Husababishwa na vimelea (fungus) au bakteria, hasa wakati wa baridi na unyevu mwingi.
 
-1. Hakuna ugonjwa ulioonyeshwa, lakini angalia mimea yako mara kwa mara kwa dalili kama majani yanayogeuka rangi, madoa au kuoza. Ukiona dalili, tuma picha au eleza zaidi.
+---
 
-2. Panda mazao yanayostahimili ukame kama KDV-1 kwa mahindi, au"
-2025-11-25T23:01:42.781Z,farmer_1764111702781,climate_smart_advice,,,0.5,180,kenya,0,"Asante kwa kutuma picha ya shamba lako kutoka Kenya. Ingawa sijaona dalili za ugonjwa kwenye mazao yako, hakikisha unachunguza mara kwa mara majani na mizizi ili kugundua mapema magonjwa kama ukungu au madoa. Ukiona dalili, tuma picha ya karibu au eleza zaidi.
+### M",
+2025-11-26T12:42:17.480Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha. Hii ni ugonjwa wa tomato unaoitwa **Late Blight** (Kuoza kwa kuchelewa au Kuoza kwa nyanya). Ugonjwa huu husababishwa na fangasi aitwaye *Phytophthora infestans*. Dalili kuu ni nyanya kuoza na kupata madoa meusi, majani kunyauka na kukauka haraka.
 
-Mazoea bora kwa wakulima Kenya:
-1. Pan"
-2025-11-25T23:02:21.528Z,farmer_1764111741528,climate_smart_advice,,,0.5,80,kenya,0,"Asante mkulima kwa taarifa! Hilo ni shamba la nyanya.
+### Matibabu na Udhibiti:
+1. **Ondoa mimea iliyoathirika:** Katakata na kuchoma majani na matunda yaliyoathirika ili kuzuia kuenea.
+2. **Tumia dawa za kuua fangasi:** Tumia fungicide kama Ridomil Gold, Dithane M-45 au Copper o",
+2025-11-26T12:48:18.942Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha. Hapa naona dalili za ugonjwa kwenye majani ya mboga, hasa kabichi. Majani yana madoa ya kahawia na yanakauka pembeni. Hii mara nyingi huashiria **ugonjwa wa Blight (Leaf Spot)**, ambao husababishwa na fangasi kama *Alternaria* au *Xanthomonas*.
 
-1. Hakuna dalili za ugonjwa uliotajwa, lakini angalia majani kama yana madoa au kuoza. Kama kuna UKUNGU, tumia dawa ya Mancozeb mara moja.
-2. Kenya, nyanya hustawi vizuri ukipanda mbegu bora kama Kilele F1. Hakikisha unalima udongo vizuri na kup"
-2025-11-25T23:05:25.217Z,farmer_1764111925216,image_diagnosis,1 Zao Nyanya,mazao,0.6,200,Kenya,0,"1. **Zao:** Nyanya  
-2. **Ugonjwa:** Late Blight (Kuoza Kuchelewa) – unaosababishwa na fangasi aitwaye *Phytophthora infestans*  
-3. **Dalili Unazoona:**  
-   - Matunda ya nyanya yana mabaka meusi yaliyooza na yanayonywea juu yake  
-   - Majani yamekauka na kuwa na rangi ya kahawia  
-   - Mabaka meusi kwenye majani na matunda, na kuoza haraka  
-4. **Tiba ya Haraka:**  
-   - Ondoa na haribu (zika a"
-2025-11-25T23:06:23.318Z,farmer_1764111983317,image_diagnosis,1 Zao Mahindi,mazao,0.6,200,Kenya,0,"1. **Zao:** Mahindi  
-2. **Shida:** Dudu waharibifu wa mahindi wanaoitwa **Stalk borer** au **Maize stem borer** (Kiswahili: Funza wa shina la mahindi)  
-3. **Dalili:** Mashimo kwenye punje za mahindi, baadhi ya punje zimeharibiwa na kuna wadudu wadogo wanaoonekana kwenye mahindi.  
-4. **Tiba ya haraka:**  
-   - Ondoa na uharibu mahindi yaliyoathirika ili kupunguza kuenea kwa wadudu.  
-   - Tumia "
-2025-11-25T23:06:48.307Z,farmer_1764112008307,text_diagnosis,Haijachunguzwa picha,,0.3,0,Unknown,0,"Habari mkulima! Asante kwa kutuma picha yako. (Kwa mfano, nikiangalia picha ya mmea wa mahindi yenye dalili za majani kuwa na madoa ya njano na kukauka katikati ya majani...)
+### Dalili
+- Madoa ya kahawia au kijivu pembeni mwa jani
+- Majani kukauka na kudhoofika
+- Kuenea kwa madoa kwa majani mengine
 
-1. **Zao:** Mahindi  
-2. **Ugonjwa:** Maize Lethal Necrosis (MLN)  
-3. **Dalili:** Majani yana madoa ya njano, yanakauka kat"
-2025-11-25T23:09:41.224Z,anonymous,greeting,,,0,0,Unknown,0,"Mambo poa kabisa! Unalima nini leo?"
-2025-11-25T23:09:59.919Z,farmer_1764112199919,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha yako. Kutokana na dalili zinazoonekana kwenye nyanya zako—madoa meusi kwenye matunda na majani yaliyokauka—mimea yako inaonekana imeathirika na ugonjwa wa **Late Blight** (Kuoza kwa kuchelewa), unaosababishwa na fangasi aitwaye *Phytophthora infestans*.
+---
 
-### Dalili za Ugonjwa
-- Madoa meusi au ya kahawia juu ya matunda na majani.
-- Matunda yanayooza na majani kukauka haraka."
-2025-11-25T23:10:46.819Z,anonymous,thanks,,,0,0,Unknown,0,"Starehe tu! Endelea kulima kwa bidii"
-2025-11-25T23:13:52.512Z,anonymous,greeting,,,0,0,Unknown,0,"Habari za shamba!"
-2025-11-25T23:14:03.730Z,anonymous,greeting,,,0,0,Unknown,0,"Shikamoo!"
-2025-11-25T23:14:21.481Z,farmer_1764112461481,image_diagnosis,From photo,,0.8,250,Unknown,0,"Asante kwa kutuma picha. Huu ni ugonjwa wa nyanya unaoitwa **Early Blight** (Au ""Bakaa ya majani"" kwa Kiswahili). Ugonjwa huu husababishwa na fangasi aitwaye *Alternaria solani*. Dalili kuu ni madoa meusi kwenye matunda na majani, na majani kukauka kama unavyoona kwenye picha.
+## Matibabu
 
-### Jinsi ya Kutibu na Kudhibiti:
-1. **Ondoa mimea iliyoathirika:** Katakata na teketeza majani na matunda yaliyoathirika"
-2025-11-25T23:34:39.084Z,farmer_1764113678033,image_diagnosis,From photo,,0.8,250,Unknown,0,"Asante kwa kutuma picha! Hii ni picha ya jani la cabbage (kabeji) lililoathirika na ugonjwa unaojulikana kama **Bacterial Soft Rot** au **Bacterial Leaf Spot**. Dalili kuu ni sehemu za majani zinazoonekana zimetoka kijani na kuwa kahawia au kijivu, na zinaweza kuwa laini au kuharibika.
+1. **Ondoa Majani Yaliyoathirika:** Kata na uondoe majani yenye ugonjwa shambani ili",
+2025-11-26T12:51:28.932Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Hii ni mimea ya nyanya iliyoathirika na ugonjwa unaoitwa **Late Blight** (Kuoza kwa kuchelewa au Kuoza kwa majani na matunda), unaosababishwa na fangasi aitwaye *Phytophthora infestans*.
 
-**Sababu:**
-Ugonjwa huu unasababishwa na bakteria, mara nyingi hutokea wakati wa unyevu mwingi au maji yanapokaa"
-2025-11-25T23:36:23.958Z,farmer_1764113783957,image_diagnosis,From photo,,0.8,250,Unknown,0,"Asante kwa kutuma picha hii. Hii ni dalili ya ugonjwa unaoitwa **Early Blight** (Kutu ya mapema) kwenye nyanya, unaosababishwa na fangasi aitwaye *Alternaria solani*. Unaweza kuona madoa meusi yenye miduara kwenye matunda na majani, pamoja na kuoza na kukauka kwa majani.
+### Dalili
+- Matunda yana madoa meusi au ya kahawia, laini na yanayooza.
+- Majani yanakauka na kuwa na madoa meusi.
+- Ugonjwa huenea haraka wakati wa unyevu na mvua nyingi.
 
-**Matibabu na Udhibiti:**
-1. **Ondoa na choma mimea iliyoathirika** mara moja ili kuzuia kuenea kwa ugonjwa.
-2. **Tumia dawa za"
-2025-11-25T23:40:59.242Z,farmer_1764114059242,voice_or_text,None,,0.4,100,Unknown,0,"Usiku mwema pia rafiki! Kama una swali lolote kuhusu shamba, mimea, au ugonjwa wa mazao, niko hapa kukusaidia. Lala salama, kesho ni siku mpya ya mafanikio shambani. Endelea kujitahidi!"
+---
+
+### Matibabu na Kinga
+1. **Ondoa mimea iliyoathirika:** Katakata na teketeza majani na matunda yaliyoath",
+2025-11-26T12:54:53.201Z,anon,voice_text,None,,0.4,100,Kenya,0,"Tomato blight ni ugonjwa unaoathiri mimea ya nyanya, husababishwa na fangasi (fungi) au bakteria. Kuna aina kuu mbili:
+
+1. **Early blight (Blight ya mapema)**  
+Husababishwa na fangasi *Alternaria solani*. Dalili ni madoa ya kahawia kwenye majani, mara nyingi yana duara na mistari ya mviringo. Majani yanaanza kunyauka na mimea kudhoofika.
+
+2. **Late blight (Blight ya kuchelewa)**  
+Husababishwa na fangasi *Phytophthora infestans*. Dalili ni madoa ya kijivu au kijani kibichi yenye unyevu kwenye m",
+2025-11-26T12:55:35.978Z,anon,voice_text,None,,0.4,100,Kenya,0,"Tomato blight ni ugonjwa unaoshambulia nyanya, husababishwa na fangasi (fungus) au bacteria. Kuna aina mbili maarufu:
+
+1. **Early blight (Alternaria solani):**  
+   - Dalili: Madoa ya kahawia kwenye majani, mara nyingi yana duara na mistari ya mviringo. Majani yanaweza kunyauka na kuanguka.
+   - Hushambulia: Majani, shina, na matunda.
+
+2. **Late blight (Phytophthora infestans):**  
+   - Dalili: Madoa ya kijivu au kahawia yenye unyevu kwenye majani, matunda yanaharibika na kuoza haraka.
+   - Hush",
+2025-11-26T19:30:53.521Z,anon,voice_text,None,,0.4,100,Kenya,0,"Shukrani kwa swali lako! **Tomato blight** ni ugonjwa unaoathiri nyanya, unaosababishwa na fangasi (mold) au bacteria. Kuna aina kuu mbili:
+
+1. **Early blight** (*Alternaria solani*) – Huonekana kama madoa ya duara yenye rangi ya hudhurungi kwenye majani, mara nyingi yana miduara kama pete. Majani yanaweza kunyauka na kudondoka.
+2. **Late blight** (*Phytophthora infestans*) – Huu ni mkali zaidi. Huleta madoa makubwa meusi yenye unyevunyevu kwenye majani, shina, na hata matunda. Matunda yanaweza ",
+2025-11-26T19:38:15.227Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko poa rafiki yangu! Asante kwa kuuliza. Na wewe uko aje leo? Kama una swali lolote kuhusu kilimo, magonjwa ya mimea, au unahitaji ushauri wa shamba, niko hapa kusaidia. Karibu!",
+2025-11-26T19:38:34.863Z,anon,voice_text,None,,0.4,100,Kenya,0,"Karibu sana! Hivi sasa, huwezi kupakia picha moja kwa moja hapa. Lakini unaweza kuelezea dalili unazoziona kwenye mimea yako ya nyanya—kwa mfano, majani yamebadilika rangi, kuna madoa, au matunda yanaharibika. Nieleze kwa undani, nitakusaidia kugundua tatizo na kukupa ushauri bora wa matibabu na mbinu za kilimo rafiki kwa mazingira.",
+2025-11-26T19:39:06.803Z,anon,voice_text,None,,0.4,100,Kenya,0,"Samahani rafiki, kwa sasa huwezi kupakia picha hapa moja kwa moja. Lakini unaweza kuelezea dalili za mimea yako kwa undani—mfano, rangi ya majani, mabaka, harufu, au mabadiliko mengine. Nipe maelezo mengi iwezekanavyo, nami nitakusaidia kugundua tatizo na kutoa ushauri bora wa kilimo.
+
+Ukihitaji msaada wa kutambua ugonjwa au wadudu, niambie:
+
+- Jina la mmea (mfano: mahindi, nyanya, viazi n.k.)
+- Dalili unazoona (mfano: majani yanageuka njano, kuna mashimo, au kuoza)
+- Umri wa mmea na hali ya sha",
+2025-11-26T19:39:36.466Z,anon,voice_text,None,,0.4,100,Kenya,0,"Pole sana kwa changamoto hiyo! Majani yenye madoa meusi na majeraha yanaweza kusababishwa na magonjwa au wadudu. Tafadhali nijulishe ni mmea gani unaougua (mfano: nyanya, mahindi, mboga, n.k.), na kama unaweza, eleza kama kuna harufu mbaya, majani yananyauka, au kuna ukungu.
+
+**Sababu zinazowezekana:**
+1. **Kuvu (fungus):** Mara nyingi madoa meusi husababishwa na magonjwa ya kuvu kama vile blight au leaf spot.
+2. **Wadudu:** Wadudu kama thrips au beetle wanaweza kuuma majani na kuacha majeraha.
+",
+2025-11-26T19:45:27.214Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Hii ni mimea ya nyanya iliyoathirika.
+
+**Ugonjwa:**  
+Nyanya zako zimeathiriwa na ugonjwa unaoitwa **Late Blight** (Kuoza kwa kuchelewa), kwa Kiswahili tunaita **Kuoza Kuchelewa** au **Kuoza Chelewa**. Ugonjwa huu husababishwa na fangasi aitwaye *Phytophthora infestans*. Dalili kuu ni madoa meusi kwenye matunda na majani, na kuoza kwa sehemu za juu za matunda.
+
+---
+
+### Matibabu na Kinga
+
+1. **Ondoa Mimea Iliyoathirika:**  
+   Katakata na kuchoma majani na matunda ya",
+2025-11-26T20:01:49.511Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko salama kabisa rafiki yangu! Asante kwa kuuliza. Na wewe je, uko salama? Leo ungependa kujua nini kuhusu kilimo? Niko hapa kukusaidia na ushauri wowote wa shamba, magonjwa ya mimea, au mbinu bora za kilimo. Karibu!",
+2025-11-26T20:09:52.600Z,anon,voice_text,None,,0.4,100,Kenya,0,"Shukrani kwa swali lako! ""Tomato blight"" kwa Kiswahili tunaita **kulegea au kuoza kwa nyanya**. Ni ugonjwa unaoathiri mimea ya nyanya, unasababishwa na fangasi (kama vile Phytophthora infestans kwa Late Blight, au Alternaria solani kwa Early Blight).
+
+**Dalili za tomato blight:**
+- Majani yanapata madoa ya kahawia au meusi.
+- Majani yananyauka na kudondoka.
+- Matunda ya nyanya yanapata madoa meusi, yanaharibika na kuoza.
+- Mashina yanaweza kupata michirizi au madoa.
+
+**Matibabu na Kinga:**
+1. ",
+2025-11-26T20:11:43.729Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko poa rafiki! Asante kwa kuuliza. Na wewe uko aje? Kama una swali lolote kuhusu kilimo, magonjwa ya mimea, au unahitaji ushauri wa shamba, niko hapa kukusaidia. Karibu!",
+2025-11-26T20:12:12.959Z,anon,voice_text,None,,0.4,100,Kenya,0,"Pole sana kwa changamoto hiyo! Wadudu weusi kwenye nyanya mara nyingi huwa ni **aphids (funza weusi wadogo)**, **thrips**, au **spider mites**. Wadudu hawa wanaweza kusababisha majani kunyauka, kugeuka njano, au matunda kudhoofika.
+
+**Hatua za haraka za kuchukua:**
+
+1. **Angalia wadudu vizuri:** Tazama chini ya majani na kwenye mashina. Wadudu ni wadogo sana, weusi au kijani, na wanashikamana kwa makundi.
+2. **Ondoa kwa mikono:** Kama ni wachache, unaweza kuwapukutisha kwa mkono au kutumia maji ",
+2025-11-26T20:19:24.495Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko salama kabisa rafiki yangu! Asante kwa kuuliza. Na wewe je, uko aje? Kama una swali lolote kuhusu kilimo, magonjwa ya mimea, au unahitaji ushauri wa shamba, niko tayari kusaidia. Karibu sana!",
+2025-11-26T20:20:13.018Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Hii ni mimea ya nyanya iliyoathirika na ugonjwa unaoitwa **Late Blight** (Kuoza kwa nyanya kwa kuchelewa), kwa Kiswahili tunaita **Kuoza kwa Nyanya** au **Kuoza Chelewa**. Ugonjwa huu unasababishwa na fangasi aitwaye *Phytophthora infestans*.
+
+**Dalili:**
+- Matunda ya nyanya yana madoa meusi au ya kahawia, yanayooza na kuwa na maji maji.
+- Majani yanakauka na kuwa na madoa meusi.
+- Mimea yote inaweza kunyauka haraka.
+
+---
+
+### Matibabu na Udhibiti
+
+1. **Ondoa mimea i",
+2025-11-26T20:21:52.094Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"**Tathmini ya Picha:**
+
+Hii ni picha ya jani la mboga (inaonekana kama sukuma wiki au kabichi) ambalo limeathirika na ugonjwa. Kuna maeneo ya kahawia na makavu pembezoni mwa jani.
+
+**Ugonjwa:**
+Huu ni ugonjwa wa **Bacterial Leaf Spot** au **Blight** (madoa ya bakteria), ambao husababisha madoa ya kahawia, makavu na kupasuka pembezoni mwa majani. Mara nyingi husababishwa na bakteria kama *Xanthomonas campestris*.
+
+**Matibabu:**
+1. **Ondoa Majani Yaliyoathirika:** Kata na uondoe majani yaliyo na m",
+2025-11-26T20:24:43.222Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko vizuri rafiki yangu! Asante kwa kuuliza. Na wewe je, uko aje? Kama una swali lolote kuhusu kilimo, magonjwa ya mimea, au unahitaji ushauri kuhusu shamba lako, niko hapa kusaidia. Karibu!",
+2025-11-26T20:25:23.168Z,anon,voice_text,None,,0.4,100,Kenya,0,"Shikamoo mkulima! **Tomato blight** (kwa Kiswahili: ""kutu ya nyanya"" au ""ugonjwa wa madoa ya nyanya"") ni ugonjwa unaoshambulia mimea ya nyanya na kusababisha majani, shina, na matunda kuoza au kukauka. Kuna aina kuu mbili:
+
+1. **Early blight** (Kutu ya mapema): Husababishwa na fangasi aitwaye *Alternaria solani*. Dalili ni madoa ya duara yenye miduara ndani yake kwenye majani, na majani huanza kudondoka.
+2. **Late blight** (Kutu ya kuchelewa): Husababishwa na fangasi aitwaye *Phytophthora in",
+2025-11-26T21:05:36.836Z,anon,voice_text,None,query,0.4,100,Kenya,0,"Tomato blight ni ugonjwa unaoshambulia mimea ya nyanya, husababisha majani na matunda kuoza au kukauka. Kuna aina mbili kuu:
+
+1. **Early blight (Blight ya mapema):**  
+Hutokea kwenye majani ya chini, inaonyesha madoa ya kahawia yenye duara na mistari. Mimea inaweza kudhoofika na matunda kuharibika.
+
+2. **Late blight (Blight ya kuchelewa):**  
+Hutokea wakati wa baridi na mvua nyingi. Inasababisha majani kuwa na madoa ya maji na matunda kuoza haraka.
+
+**Dalili:**  
+- Majani kuwa na madoa ya kahawi",
+2025-11-26T21:26:13.536Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko salama kabisa! Asante kwa kuuliza. Na wewe uko aje? Kama una swali lolote kuhusu kilimo, magonjwa ya mimea, au unahitaji ushauri wa shamba, niko hapa kusaidia. Karibu!",
+2025-11-26T21:26:30.235Z,anon,voice_text,None,,0.4,100,Kenya,0,"Tomato blight ni ugonjwa unaoshambulia nyanya, husababisha majani ya nyanya kuwa na madoa ya kahawia, kijivu au nyeusi, na baadaye kunyauka na kuanguka. Kuna aina mbili kuu:
+
+1. **Early blight (Blight ya mapema):** Inasababishwa na fangasi *Alternaria solani*. Dalili ni madoa ya duara na mistari kwenye majani ya chini, shina na hata matunda.
+
+2. **Late blight (Blight ya kuchelewa):** Inasababishwa na fangasi *Phytophthora infestans*. Dalili ni madoa ya maji maji, kijivu au nyeusi, na huenea hara",
+2025-11-26T21:26:54.024Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Kutazama kwa makini, nyanya zako zinaonekana zimeathirika na ugonjwa unaoitwa **Late Blight** (Kuoza kwa kuchelewa au Kuoza kwa nyanya). Ugonjwa huu husababishwa na fangasi aitwaye *Phytophthora infestans*.
+
+### Dalili
+- Matunda ya nyanya yamekuwa na madoa meusi, laini na yanakufa haraka.
+- Majani yamekauka na yana madoa ya kahawia au meusi.
+- Ugonjwa huu huenea haraka wakati wa hali ya unyevu na mvua nyingi.
+
+---
+
+### Matibabu na Udhibiti
+1. **Ondoa mimea iliyoathir",

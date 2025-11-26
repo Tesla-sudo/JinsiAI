@@ -32,3 +32,48 @@ Mlipuko wa mchele husababishwa na kuvu *Magnaporthe oryzae*. Dalili za kawaida n
 Ili kukusaidia na **utambuzi wa magonjwa**, **matibabu**, na **ushauri mzuri wa hali ya hewa** (CO₂ imehifadhiwa, ath..."
 2025-11-25T12:35:46.443Z,farmer-1764074139592,text_voice_query,- Mapendekezo ya matibabu,0.1,5,Unknown,50,yako,"Hujambo! Umenisalimia, lakini sioni habari yoyote kuhusu mazao, dalili za shamba, au picha ya kuchambua kwa utambuzi wa magonjwa. Tafadhali toa maelezo kuhusu mazao yako, dalili zozote zinazoonekana (..."
 2025-11-25T12:38:18.669Z,farmer-1764074283099,text_voice_query,(Kitambulisho cha Wadudu):**,0.1,5,Unknown,50,yako,"Asante kwa kushiriki wasiwasi wako kuhusu wadudu kwenye mahindi yako. Nitatoa maelezo ya jumla kuhusu utambuzi wa wadudu, chaguzi za matibabu, na ushauri mzuri wa hali ya hewa ili kusaidia kupunguza a..."
+2025-11-26T00:14:30.587Z,anon,voice_text,None,,0.4,100,Kenya,0,"Niko salama kabisa! Asante kwa kuniuliza. Karibu sana, mimi ni JinsiAI, daktari wa mashamba. Naweza kusaidia kugundua magonjwa ya mimea, kutoa tiba za kienyeji, na kukupa ushauri wa kuokoa maji na kupunguza hewa ukaa shambani. Una swali lolote kuhusu kilimo leo?",
+2025-11-26T00:16:06.845Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha. Hapa naona nyanya zimeathirika na ugonjwa unaoitwa **Late Blight** (Kuoza kwa nyanya, kitaalamu: Phytophthora infestans).
+
+### Dalili
+- Matunda ya nyanya yana mabaka meusi, laini na yanaharibika haraka.
+- Majani yanakauka na kuwa na mabaka meusi.
+- Ugonjwa huenea haraka wakati wa hali ya unyevu na mvua.
+
+---
+
+### Matibabu na Udhibiti
+1. **Ondoa mimea iliyoathirika:** Kata na zika au choma majani na matunda yaliyoharibika ili kuzuia kuenea.
+2. **Tumia dawa za kuzuia fanga",
+2025-11-26T00:22:10.852Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Nafahamu hii ni mahindi yaliyoathiriwa na wadudu waharibifu, hasa **stalk borer** au **mafunza wa mahindi** (stem borers) na pia **weevils** (dumuzi) ambao huchimba mashimo kwenye punje za mahindi.
+
+### Ugonjwa/Wadudu:
+- **Stalk borer** au **mafunza wa mahindi**: Hawa ni funza wanaochimba mashimo kwenye mahindi, wakila ndani na kusababisha uharibifu unaoonekana kama vile kwenye picha.
+- **Weevils (dumuzi)**: Wadudu wadogo weusi wanaoingia kwenye punje na kula mahindi",
+2025-11-26T00:24:07.136Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kuniletea picha hii ya nyanya. Hebu nikupe majibu:
+
+**Ugonjwa:**  
+Nyanya zako zimeathiriwa na ugonjwa wa **Late Blight** (Kuoza kwa kuchelewa), unaosababishwa na fangasi aitwaye *Phytophthora infestans*. Dalili zake ni nyanya kuharibika juu na kuwa na mabaka meusi, majani kukauka na kuwa na madoa.
+
+**Matibabu:**  
+1. **Ondoa na choma** nyanya na majani yaliyoathirika ili kuzuia kuenea.
+2. Tumia **dawa za kuua fangasi** kama Ridomil Gold, Copper oxychloride au Mancozeb. Fuata maelekez",
+2025-11-26T00:26:47.440Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"**Ugonjwa:**  
+Picha inaonyesha nyanya zenye madoa meusi na kuoza juu. Huu ni ugonjwa wa **Late Blight** (Kuoza chelewa) unaosababishwa na fangasi aitwaye *Phytophthora infestans*. Ugonjwa huu huathiri sana nyanya na viazi.
+
+**Dalili:**  
+- Madoa meusi juu ya nyanya na majani.
+- Nyanya kuoza na majani kukauka.
+- Kuenea haraka wakati wa mvua au unyevu mwingi.
+
+**Matibabu na Udhibiti:**  
+1. **Ondoa mimea iliyoathirika:** Katakata na choma majani na matunda yaliyoathirika ili kuzuia kuenea.
+2. **T",
+2025-11-26T00:27:27.678Z,anon,image_diagnosis,Detected from photo,,0.8,250,Kenya,0,"Asante kwa kutuma picha hii. Hii ni mahindi yaliyoathirika na wadudu waharibifu, hasa **dumuzi wa mahindi** (Maize Weevil) au **stalk borer**. Dalili kuu ni mashimo kwenye punje za mahindi na uwepo wa wadudu wadogo weusi.
+
+### Ugonjwa/Wadudu
+- **Dumuzi wa mahindi** (Sitophilus zeamais) au **stalk borer** (Busseola fusca).
+- Wadudu hawa huingia ndani ya punje na kula mahindi, kusababisha mashimo na kupunguza mavuno.
+
+### Matibabu
+1. **Ukaguzi na Uchambuzi:** Angalia mahindi yako mara kwa mara sha",
