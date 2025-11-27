@@ -15,7 +15,8 @@ export default function AdminDashboard() {
     locationData: []
   });
 
-  const baseUrl = "https://app.powerbi.com/reportEmbed?reportId=06d9a605-d22c-402f-b0a9-1e03d886965e&autoAuth=true&ctid=b783208a-8014-4829-9589-5324f76470c8";
+  const baseUrl = "https://app.powerbi.com/reportEmbed?reportId=ad34aaeb-d865-4f61-80b2-4fabb4325dfe&autoAuth=true&ctid=b783208a-8014-4829-9589-5324f76470c8";
+  //https://app.powerbi.com/reportEmbed?reportId=06d9a605-d22c-402f-b0a9-1e03d886965e&autoAuth=true&ctid=b783208a-8014-4829-9589-5324f76470c8
   const pages = ["ReportSection", "ReportSection1", "ReportSection2", "ReportSection3"];
   const tabNames = ["Disease Map", "Water Saved", "CO₂ Saved", "Income Generated"];
 
