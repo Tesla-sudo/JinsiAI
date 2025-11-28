@@ -1,127 +1,128 @@
-const express = require('express');
-const router = express.Router();
-const fs = require('fs');
-const axios = require('axios');
-const { execSync } = require('child_process');
-require('dotenv').config();
+const express = require('express')
+const router = express.Router()
+const fs = require('fs')
+const axios = require('axios')
+const ffmpegPath = require('ffmpeg-static')
+const { execFile } = require('child_process')
+const util = require('util')
+const execFileAsync = util.promisify(execFile)
 
 module.exports = (upload, pushToCSV) => {
 
-  // ========= /voice endpoint (voice-only) =========
   router.post('/voice', upload.single('audio'), async (req, res) => {
-    if (!req.file) {
-      return res.status(400).json({ success: false, message: "No audio file received" });
-    }
-
+    // voice code unchanged — perfect
+    if (!req.file) return res.status(400).json({ error: "No audio" })
+    const inputPath = req.file.path
+    const wavPath = inputPath + '.wav'
     try {
-      const audioPath = req.file.path;
-      const wavPath = audioPath + '.wav';
-      execSync(`ffmpeg -y -i "${audioPath}" -ar 16000 -ac 1 "${wavPath}"`, { stdio: 'ignore' });
-
-      const sttRes = await axios.post(
-        `https://${process.env.AZURE_REGION}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=sw-KE`,
-        fs.readFileSync(wavPath),
-        { headers: { 'Ocp-Apim-Subscription-Key': process.env.AZURE_SPEECH_KEY, 'Content-Type': 'audio/wav' } }
-      );
-
-      const transcribed = (sttRes.data.DisplayText || "Sauti imepokelewa").trim();
-      fs.unlinkSync(wavPath);
-      fs.unlinkSync(audioPath);
-
-      // Forward to main /process logic with transcribed text
-      req.body.text = transcribed;
-      return router.handle(req, res); // calls /process below
-    } catch (err) {
-      console.error("Voice processing error:", err.message);
-      fs.unlinkSync(req.file.path);
-      return res.json({ success: true, gptOutput: "Samahani, sauti haikusikika vizuri. Jaribu tena." });
+      await execFileAsync(ffmpegPath, ['-y', '-i', inputPath, '-ar', '16000', '-ac', '1', '-f', 's16le', '-acodec', 'pcm_s16le', wavPath])
+      const stt = await axios.post(`${process.env.AZURE_SPEECH_ENDPOINT}/speech/recognition/conversation/cognitiveservices/v1?language=sw-KE`, fs.createReadStream(wavPath), {
+        headers: { 'Ocp-Apim-Subscription-Key': process.env.AZURE_SPEECH_KEY.trim(), 'Content-Type': 'audio/L16; rate=16000' }
+      })
+      const text = (stt.data.DisplayText || "").trim()
+      fs.unlinkSync(inputPath); fs.unlinkSync(wavPath)
+      if (!text) return res.json({ success: true, gptOutput: "Samahani mkulima, sikukusikia vizuri. Jaribu tena karibu na simu." })
+      req.body.text = text
+      return router.handle(req, res)
+    } catch (e) {
+      try { fs.unlinkSync(inputPath); fs.unlinkSync(wavPath) } catch {}
+      return res.json({ success: true, gptOutput: "Jaribu tena mkulima." })
     }
-  });
+  })
 
-  // ========= MAIN /process endpoint (photo + voice + text) =========
   router.post('/process', upload.fields([
     { name: 'image', maxCount: 1 },
     { name: 'audio', maxCount: 1 }
   ]), async (req, res) => {
     try {
-      let userText = (req.body.text || '').toLowerCase().trim();
-      const hasImage = !!req.files?.image?.[0];
-      const conversationId = req.body.conversationId || req.headers['conversationid'] || "";
+      let userText = (req.body.text || '').toString().trim()
+      const imageFile = req.files?.image?.[0]
+      let imageBase64 = null
+      let detectedDisease = "Hakuna ugonjwa uliogunduliwa"
 
-      // === Handle voice (if sent directly or via /process) ===
-      if (req.files?.audio?.[0]) {
-        const audioPath = req.files.audio[0].path;
-        const wavPath = audioPath + '.wav';
-        execSync(`ffmpeg -y -i "${audioPath}" -ar 16000 -ac 1 "${wavPath}"`, { stdio: 'ignore' });
-        const sttRes = await axios.post(
-          `https://${process.env.AZURE_REGION}.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=sw-KE`,
-          fs.readFileSync(wavPath),
-          { headers: { 'Ocp-Apim-Subscription-Key': process.env.AZURE_SPEECH_KEY, 'Content-Type': 'audio/wav' } }
-        );
-        userText += ' ' + (sttRes.data.DisplayText || '').toLowerCase().trim();
-        fs.unlinkSync(wavPath);
-        fs.unlinkSync(audioPath);
+      if (imageFile) {
+        imageBase64 = fs.readFileSync(imageFile.path, 'base64')
+        fs.unlinkSync(imageFile.path)
       }
 
-      // === Quick greetings & thanks ===
-      if (/habari|mambo|shikamoo|hello|hi|jambo/.test(userText)) {
-        const replies = ["Habari za shamba mkulima!", "Mambo poa!", "Shikamoo mzee!", "Karibu JinsiAI!"];
-        return res.json({ success: true, gptOutput: replies[Math.floor(Math.random() * replies.length)] });
-      }
-      if (/asante|thanks|thank you|a hsante/.test(userText)) {
-        return res.json({ success: true, gptOutput: "Karibu sana mkulima! Endelea kulima kwa bidii." });
-      }
+      const systemPrompt = `You are JinsiAI — daktari bora wa mazao Kenya.
 
-      // === Image handling + GPT-4 Vision ===
-      let imageBase64 = null;
-      if (hasImage) {
-        imageBase64 = fs.readFileSync(req.files.image[0].path, 'base64');
-        fs.unlinkSync(req.files.image[0].path);
-      }
+Jibu kwa Kiswahili rahisi na mpangilio huu haswa:
 
-      const messages = [
-        { role: "system", content: "You are JinsiAI — Kenya's best AI farming doctor. Speak warm, simple Kiswahili. Diagnose diseases, give local treatments, water-saving & carbon-reducing tips." }
-      ];
+UGONJWA: Jina la ugonjwa au Hakuna
+
+Hali ya Mazao:
+• Dalili 1
+• Dalili 2
+
+Matibabu ya Haraka:
+1. Hatua 1
+2. Hatua 2
+3. Hatua 3
+
+Kinga ya Baadaye:
+• Ushauri 1
+• Ushauri 2
+
+Tumia emoji za kijani na nyekundu. Usiandike chochote zaidi ya hii muundo.`
+
+      const messages = [{ role: "system", content: systemPrompt }]
 
       if (imageBase64) {
         messages.push({
           role: "user",
           content: [
-            { type: "text", text: userText || "Tazama picha hii na ueleza ugonjwa, matibabu na ushauri wa kilimo bora." },
+            { type: "text", text: userText || "Tazama picha hii vizuri na jibu kwa muundo ulioombwa." },
             { type: "image_url", image_url: { url: `data:image/jpeg;base64,${imageBase64}` } }
           ]
-        });
+        })
       } else {
-        messages.push({ role: "user", content: userText || "Nisaidie na kilimo leo." });
+        messages.push({ role: "user", content: userText || "Nisaidie na kilimo leo." })
       }
 
       const gptRes = await axios.post(
         `${process.env.AZURE_OPENAI_ENDPOINT}/openai/deployments/${process.env.AZURE_OPENAI_DEPLOYMENT}/chat/completions?api-version=2024-08-01-preview`,
-        { messages, max_tokens: 600, temperature: 0.4 },
+        { messages, max_tokens: 900, temperature: 0.3 },
         { headers: { 'api-key': process.env.AZURE_OPENAI_KEY }, timeout: 90000 }
-      );
+      )
 
-      const answer = gptRes.data.choices[0].message.content.trim();
+      let answer = gptRes.data.choices[0]?.message?.content?.trim() || "Samahani, jaribu tena."
 
-      // === Save to CSV with conversationId for daily notifications ===
+      // Extract disease name
+      const diseaseMatch = answer.match(/UGONJWA:\s*([^\n\r]+)/i)
+      if (diseaseMatch?.[1]) {
+        detectedDisease = diseaseMatch[1].trim()
+
+        // Replace with clean, beautiful Markdown (no raw HTML)
+        answer = answer.replace(
+          /UGONJWA:[^\n\r]+/i,
+          `**UGONJWA: ${detectedDisease}**`
+        )
+      }
+
+      // Final clean & beautiful formatting
+      answer = answer
+        .replace(/^Hali ya Mazao:/gim, '**Hali ya Mazao:**')
+        .replace(/^Matibabu ya Haraka:/gim, '**Matibabu ya Haraka:**')
+        .replace(/^Kinga ya Baadaye:/gim, '**Kinga ya Baadaye:**')
+
+      // Save clean text to CSV (no HTML, no **)
       pushToCSV({
-        farmerId: req.body.farmerId || "anon",
-        eventType: hasImage ? "image_diagnosis" : "voice_text",
-        disease: hasImage ? "Detected from photo" : "None",
-        co2SavedKg: hasImage ? 0.8 : 0.4,
-        waterSavedLiters: hasImage ? 250 : 100,
-        location: req.body.location || "Kenya",
-        adviceGiven: answer.substring(0, 500),
-        conversationId
-      });
+        eventType: imageFile ? "image_diagnosis" : "text_voice_query",
+        disease: detectedDisease,
+        adviceGiven: answer.replace(/\*\*/g, '').substring(0, 500),
+        co2SavedKg: imageFile ? 0.8 : 0.4,
+        waterSavedLiters: imageFile ? 250 : 100
+      })
 
-      res.json({ success: true, gptOutput: answer });
+      res.json({ success: true, gptOutput: answer })
 
     } catch (err) {
-      console.error("Process error:", err.message);
-      res.json({ success: true, gptOutput: "Samahani mkulima, nimekosa kidogo. Jaribu tena — niko hapa nikusaidie!" });
+      console.error("ERROR:", err.message)
+      pushToCSV({ eventType: "error", disease: "Hitilafu", adviceGiven: "Failed" })
+      res.json({ success: true, gptOutput: "Samahani mkulima, picha haikuonekana vizuri. Tuma tena." })
     }
-  });
+  })
 
-  return router;
-};
+  return router
+}

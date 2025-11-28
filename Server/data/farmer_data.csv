@@ -250,3 +250,409 @@ Hii ni dalili ya ugonjwa wa **Late Blight** (Kuoza kwa nyanya kutokana na fangas
 
 ### Matibabu
 1. **Ondoa majani yaliyoathirika**: Katakata na",
+2025-11-27T08:07:29.864Z,anon,voice_text,None,,0.4,100,Kenya,0,"Asante sana! Pia nawe uwe na siku njema. Kama unahitaji ushauri wa kilimo au msaada wowote kuhusu mimea yako, niko hapa kukusaidia. Usiogope kuuliza!",
+2025-11-27T18:18:39.928Z,voice_user,voice_query,Detected from photo,,0.4,100,Kenya,0,Habari! Karibu sana. Niko hapa kukusaidia na maswali yoyote kuhusu kilimo. Ungependa kujua nini leo?,
+2025-11-27T20:05:01.862Z,anon,text_voice_query,au magonjwa ya mimea,,0.4,100,Kenya,0,"Asante sana! Karibu uniulize maswali yoyote kuhusu kilimo, mimea, au magonjwa ya mimea. Niko hapa kukusaidia kwa lugha rahisi na yenye upendo. Umeandaa swali au picha ya shamba lako?",
+2025-11-27T20:05:13.231Z,anon,text_voice_query,sioni picha yoyote kwenye ujumbe wako,,0.4,100,Kenya,0,"Samahani, sioni picha yoyote kwenye ujumbe wako. Tafadhali jaribu kupakia tena picha ili niweze kukusaidia vizuri. Niko hapa kukusaidia na ugonjwa wowote wa mimea au mifugo!",
+2025-11-27T20:05:29.079Z,anon,image_diagnosis,Kuoza kwa majani kutokana,,0.8,250,Kenya,0,"Asante kwa kutuma picha mkulima! Huu ni ugonjwa wa **Bacterial Soft Rot** (Kuoza kwa majani kutokana na bakteria), ambao huathiri sana mboga kama sukuma wiki, kabichi na spinach. Dalili kuu ni majani kuoza kuanzia pembeni, kuwa na rangi ya kahawia au kijivu, na wakati mwingine kutoa harufu mbaya.
+
+**Matibabu na Kinga:**
+1. **Ondoa majani yaliyoathirika** na uyatumbukize mbali na shamba.
+2. **Epuka kumwagilia maji kupita kiasi** – maji mengi huchangia kuenea kwa ugonjwa.
+3. **Panda kwa nafasi** i",
+2025-11-27T20:10:10.390Z,anon,error,Hitilafu,,0,0,Kenya,0,Server error,
+2025-11-27T20:10:29.987Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"**UGONJWA: Hakuna**
+
+Samahani, sijaona picha yoyote au dalili za ugonjwa kwenye ujumbe wako. Tafadhali tuma picha ya mmea au eleza zaidi kuhusu tatizo ili niweze kukusaidia vizuri.",
+2025-11-27T20:11:02.767Z,anon,error,Hitilafu,,0,0,Kenya,0,Server error,
+2025-11-27T20:13:57.481Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya kwa kuchelewa),,0.8,250,Kenya,0,"**UGONJWA: Late Blight (Kuoza kwa Nyanya kwa kuchelewa)**
+
+Ushauri:
+1. Ondoa na haribu matunda na majani yaliyoathirika ili kuzuia kuenea kwa ugonjwa.
+2. Tumia dawa za kuua fangasi (fungicide) kama vile mancozeb au copper-based fungicides mara moja unapogundua dalili.
+3. Panda nyanya kwa nafasi ili kuruhusu hewa kupita vizuri na epuka kumwagilia juu ya majani.
+4. Badilisha shamba (crop rotation) na usipande nyanya au viazi sehemu ile ile kila msimu.
+5. Hakikisha shamba lako ni safi na usitumie m",
+2025-11-27T20:17:50.982Z,anon,image_diagnosis,Downy Mildew (Ukungu Majani),,0.8,250,Kenya,0,"UGONJWA: Downy Mildew (Ukungu Majani)
+
+Hali ya Mazao:
+• Madoa ya kahawia pembezoni mwa majani 🟤
+• Majani yanakauka na kunyauka 🍂
+• Ukungu mweupe chini ya majani
+
+Matibabu ya Haraka:
+1. Ondoa majani yaliyoathirika shambani 🗑️
+2. Nyunyizia dawa ya kuua ukungu (fungicide) kama Ridomil Gold au Copper oxychloride 💧
+3. Hakikisha shamba lina hewa ya kutosha kwa kupunguza msongamano wa mimea
+
+Kinga ya Baadaye:
+• Panda mbegu zinazostahimili magonjwa 🌱
+• Epuka kunyunyizia maji juu ya majani na hakiki",
+2025-11-27T20:20:12.335Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya),,0.8,250,Kenya,0,"UGONJWA: Late Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Matunda ya nyanya yana mabaka meusi na kuoza kwa juu 🍅❌
+• Majani yamekauka na kuwa na rangi ya kahawia au nyeusi 🌿❌
+
+Matibabu ya Haraka:
+1. Ondoa na haribu nyanya na majani yaliyoathirika kabisa 🗑️
+2. Nyunyizia dawa ya kuzuia fangasi kama Ridomil Gold au Copper oxychloride 💧
+3. Hakikisha shamba lina hewa ya kutosha na usimwagilie maji juu ya majani 🚿
+
+Kinga ya Baadaye:
+• Panda mbegu bora zinazostahimili magonjwa 🌱✅
+• Fanya mzunguko ",
+2025-11-27T20:21:12.819Z,anon,text_voice_query,Kuoza chelewa (Late Blight) 🍂,,0.4,100,Kenya,0,"UGONJWA: Kuoza chelewa (Late Blight) 🍂
+
+Hali ya Mazao:
+• Majani yana madoa ya kijivu au kahawia yenye ukingo mweupe 🌱
+• Mabua na matunda (viazi/nyanya) yanaharibika haraka na kuoza 🥔🍅
+
+Matibabu ya Haraka:
+1. Ondoa na choma mimea iliyoathirika kabisa 🔥
+2. Nyunyiza dawa ya kuua fangasi kama Ridomil Gold au Copper-based fungicide 💧
+3. Hakikisha shamba lina hewa ya kutosha na maji hayasimami 🚿
+
+Kinga ya Baadaye:
+• Panda mbegu bora na zinazostahimili ugonjwa 💪
+• Epuka kumwagilia juu ya majani",
+2025-11-27T20:55:01.601Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua za matibabu zinahitajika
+2. Endelea kufuatilia mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Kagua mazao mara kwa mara 🟢
+• Tumia mbinu bora za kilimo 🟢",
+2025-11-28T04:39:12.145Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zozote zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum kwa sasa
+2. Endelea kufuatilia mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Kagua mazao mara kwa mara 🟢
+• Tumia mbinu bora za kilimo 🟢",
+2025-11-28T04:39:24.569Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili za ugonjwa
+• Mazao yako salama
+
+Matibabu ya Haraka:
+1. Endelea kufuatilia mazao yako
+2. Hakikisha unatoa maji na mbolea ipasavyo
+3. Ondoa magugu mara kwa mara
+
+Kinga ya Baadaye:
+• Fanya ukaguzi wa mara kwa mara shambani 🟢
+• Tumia mbegu bora na zenye afya 🟢",
+2025-11-28T04:44:45.642Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya),,0.8,250,Kenya,0,"UGONJWA: Late Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Matunda ya nyanya yana mabaka meusi na kuoza juu
+• Majani yamekauka na kuwa na madoa ya kahawia
+
+Matibabu ya Haraka:
+1. Ondoa na haribu mimea iliyoathirika kabisa 🗑️
+2. Nyunyizia dawa ya kuua fangasi (fungicide) kama Ridomil au Copper oxychloride 💧
+3. Hakikisha upo umbali kati ya mimea ili hewa ipite vizuri 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu zinazostahimili magonjwa 🌱
+• Epuka kumwagilia maji juu ya majani, mwagilia kwenye shina 🚫💦",
+2025-11-28T04:46:44.954Z,anon,text_voice_query,Tomato Blight (Kuoza kwa Nyanya),,0.4,100,Kenya,0,"UGONJWA: Tomato Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Majani yanageuka njano na kupata madoa meusi 🟡⚫
+• Nyanya zinapata madoa ya kahawia na kuoza 🍅🟤
+
+Matibabu ya Haraka:
+1. Ondoa majani na matunda yaliyoathirika mara moja ✂️
+2. Nyunyizia dawa ya kuzuia fangasi kama Copper fungicide 🧴
+3. Hakikisha shamba lina hewa ya kutosha na usimwagilie juu ya majani 💧
+
+Kinga ya Baadaye:
+• Panda nyanya kwenye udongo ulio na mifereji mizuri ya maji 🌱
+• Tumia mbegu bora na sugu kwa magonjwa 🧬",
+2025-11-28T04:46:57.834Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum kwa sasa
+2. Endelea kuchunguza mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Fanya ukaguzi wa mara kwa mara shambani 🟢
+• Hakikisha usafi wa shamba na vifaa vyako 🟢",
+2025-11-28T04:51:17.434Z,anon,greeting,none,,0,0,Kenya,0,Habari za shamba mkulima! Karibu JinsiAI,
+2025-11-28T04:51:23.793Z,anon,text_query,unknown,,0,0,Kenya,0,Habari mkulima! Una swali gani leo kuhusu kilimo?,
+2025-11-28T04:51:34.554Z,anon,text_query,unknown,,0,0,Kenya,0,Habari mkulima! Una swali gani leo kuhusu kilimo?,
+2025-11-28T04:54:10.108Z,anon,greeting,none,,0,0,Kenya,0,Habari za shamba mkulima! Karibu JinsiAI,
+2025-11-28T04:54:24.594Z,anon,text_query,Tomato Blight (Kuoza kwa Nyanya),,0.4,100,Kenya,0,"UGONJWA: Tomato Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Majani yanageuka rangi ya njano au kahawia 🍂
+• Madoa meusi kwenye majani, shina na matunda 🍅⚫
+
+Matibabu ya Haraka:
+1. Ondoa na choma majani/mimea iliyoathirika 🗑️🔥
+2. Nyunyiza dawa ya kuua fangasi kama copper-based fungicide 💧
+3. Hakikisha mimea ina nafasi ya kutosha ili hewa ipite vizuri 🌬️
+
+Kinga ya Baadaye:
+• Panda nyanya kwenye sehemu yenye mwangaza na hewa ya kutosha 🌞
+• Epuka kumwagilia juu ya majani, mwagilia kwenye udongo",
+2025-11-28T04:56:48.199Z,anon,greeting,none,,0,0,Kenya,0,Habari za shamba mkulima! Karibu JinsiAI,
+2025-11-28T04:58:27.960Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua za matibabu zinahitajika
+2. Endelea kufuatilia mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Fanya ukaguzi wa mara kwa mara shambani 🟩
+• Tumia mbegu bora na mbolea sahihi 🟩",
+2025-11-28T04:58:38.787Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum kwa sasa
+2. Endelea kufuatilia mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Fanya ukaguzi wa mara kwa mara shambani 🌱
+• Tumia mbegu bora na zenye afya 💚",
+2025-11-28T04:58:58.110Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya kwa kuchelewa),,0.8,250,Kenya,0,"UGONJWA: Late Blight (Kuoza kwa Nyanya kwa kuchelewa)
+
+Hali ya Mazao:
+• Matunda ya nyanya yana mabaka meusi na kuoza sehemu ya juu 🍅❌
+• Majani yamekauka na kuwa na mabaka ya kahawia au nyeusi 🍂
+
+Matibabu ya Haraka:
+1. Ondoa na haribu matunda na majani yaliyoathirika kabisa 🗑️
+2. Nyunyizia dawa ya kuua fangasi (fungicide) kama Ridomil Gold au Dithane M45 💧
+3. Hakikisha mimea ina nafasi ya kutosha ili hewa ipite vizuri 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu zinazostahimili magonjwa na zingatia m",
+2025-11-28T04:59:12.629Z,anon,text_voice_query,Hakuna (Aphids ni wadudu waharibifu),,0.4,100,Kenya,0,"UGONJWA: Hakuna (Aphids ni wadudu waharibifu)
+
+Hali ya Mazao:
+• Majani yanakunjamana au kudhoofika 🟢
+• Uwepo wa vijidudu vidogo vya kijani, nyeusi au kahawia kwenye majani 🔴
+
+Matibabu ya Haraka:
+1. Nyunyiza maji yenye nguvu ili kuondoa wadudu majani 🟢
+2. Tumia dawa za wadudu salama kama neem oil au sabuni ya kuua wadudu 🟢
+3. Ondoa majani yaliyoathirika sana 🔴
+
+Kinga ya Baadaye:
+• Panda mimea rafiki kama vitunguu au coriander kuzuia aphids 🟢
+• Kagua mimea mara kwa mara na uondoe wadudu mape",
+2025-11-28T05:04:26.512Z,anon,text_voice_query,Madoa ya majani (Leaf spot)  Kuoza shina (Red rot)  Funza wa miwa (Sugarcane borer),,0.4,100,Kenya,0,"UGONJWA: Madoa ya majani (Leaf spot), Kuoza shina (Red rot), Funza wa miwa (Sugarcane borer)
+
+Hali ya Mazao:
+• Majani kuwa na madoa ya kahawia au kijivu 🟤
+• Shina kuoza na kuwa na rangi nyekundu au nyeusi ⚫
+• Mashimo kwenye shina, miwa kukauka au kukatika 🪱
+
+Matibabu ya Haraka:
+1. Ondoa na choma miwa iliyoathirika kabisa 🔥
+2. Tumia dawa ya kuua wadudu kama Karate au Belt 25EC 🧪
+3. Nyunyiza dawa ya kuzuia fangasi kama Mancozeb au Copper oxychloride 🌱
+
+Kinga ya Baadaye:
+• Panda miwa bora na y",
+2025-11-28T05:11:31.789Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili za ugonjwa
+• Mazao yako salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum
+2. Endelea kufuatilia mazao
+3. Hakikisha usafi shambani
+
+Kinga ya Baadaye:
+• Fanya ukaguzi wa mara kwa mara shambani 🌱
+• Tumia mbegu bora na zilizothibitishwa 💚",
+2025-11-28T05:11:47.544Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili za ugonjwa, lakini weevils ni wadudu waharibifu wa mazao kama mahindi, maharagwe n.k.
+• Wanaonekana kama wadudu wadogo weusi au kahawia kwenye nafaka.
+
+Matibabu ya Haraka:
+1. Chambua na ondoa nafaka zilizoathirika 🛑
+2. Tumia dawa ya wadudu inayopendekezwa kwa kuhifadhi nafaka 🟢
+3. Hifadhi nafaka mahali pakavu na safi 🟢
+
+Kinga ya Baadaye:
+• Hakikisha unahifadhi mazao kwenye vyombo vilivyofungwa vizuri 🟢
+• Fanya ukaguzi wa mara kwa mara kwenye gh",
+2025-11-28T05:12:13.854Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya kwa Kiwango Kikubwa),,0.8,250,Kenya,0,"UGONJWA: Late Blight (Kuoza kwa Nyanya kwa Kiwango Kikubwa)
+
+Hali ya Mazao:
+• Matunda ya nyanya yana mabaka meusi na kuoza sehemu ya juu 🍅❌
+• Majani yamekauka na kuwa ya kahawia au meusi 🍂
+
+Matibabu ya Haraka:
+1. Ondoa na haribu mimea iliyoathirika kabisa 🚮
+2. Nyunyizia dawa ya kuua fangasi kama Ridomil Gold au Copper oxychloride 💧
+3. Hakikisha shamba lina hewa ya kutosha kwa kupunguza msongamano wa mimea 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu bora zinazostahimili magonjwa 💪
+• Epuka kunyunyiz",
+2025-11-28T06:29:05.629Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum kwa sasa
+2. Endelea kuchunguza mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Kagua mazao mara kwa mara 🟢
+• Fuata usafi shambani 🟢",
+2025-11-28T06:42:54.580Z,anon,text_voice_query,Tomato Blight (Kuoza kwa Nyanya),,0.4,100,Kenya,0,"UGONJWA: Tomato Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Majani yanageuka rangi ya kahawia au njano 🍂
+• Madoa meusi kwenye matunda na shina 🍅⚫
+
+Matibabu ya Haraka:
+1. Ondoa na teketeza majani na matunda yaliyoathirika 🗑️🔥
+2. Nyunyiza dawa ya kuzuia fangasi kama copper-based fungicide 💧
+3. Hakikisha mimea ina nafasi ya kutosha ili hewa ipite vizuri 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu bora zinazostahimili magonjwa 🌱
+• Epuka kumwagilia maji juu ya majani, mwagilia kwenye udongo 🚿",
+2025-11-28T06:43:24.209Z,anon,image_diagnosis,Late Blight (Kuoza kwa Nyanya kwa Kiwango Kikubwa),,0.8,250,Kenya,0,"UGONJWA: Late Blight (Kuoza kwa Nyanya kwa Kiwango Kikubwa)
+
+Hali ya Mazao:
+• Matunda ya nyanya yana mabaka meusi na kuoza juu
+• Majani yamekauka na kuwa na madoa ya kahawia
+
+Matibabu ya Haraka:
+1. Ondoa na haribu nyanya na majani yaliyoathirika kabisa 🚮
+2. Nyunyizia dawa ya kuua fangasi kama Ridomil Gold au Copper oxychloride 🧴
+3. Hakikisha shamba lina hewa ya kutosha kwa kupunguza msongamano wa mimea 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu zinazostahimili magonjwa 💪
+• Epuka kumwagilia juu ya m",
+2025-11-28T07:50:22.404Z,anon,text_voice_query,Tomato Blight (Kuoza kwa Nyanya),,0.4,100,Kenya,0,"UGONJWA: Tomato Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Majani yanageuka rangi ya kahawia au njano 🍂
+• Mabaka meusi kwenye majani na matunda 🍅⚫
+
+Matibabu ya Haraka:
+1. Ondoa majani na matunda yaliyoathirika 🗑️
+2. Nyunyiza dawa ya kuua fangasi kama copper fungicide 💧
+3. Hakikisha upandaji una nafasi ya kutosha ili hewa ipite vizuri 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu bora zinazostahimili magonjwa 🌱
+• Epuka kumwagilia maji juu ya majani, mwagia kwenye mchanga tu 🚿",
+2025-11-28T07:50:47.172Z,anon,text_voice_query,Hakuna (Aphids ni wadudu waharibifu  si ugonjwa),,0.4,100,Kenya,0,"UGONJWA: Hakuna (Aphids ni wadudu waharibifu, si ugonjwa)
+
+Hali ya Mazao:
+• Majani yanakunjamana na kudhoofika 🥀
+• Uwepo wa vijidudu vidogo vya kijani, nyeusi au kahawia chini ya majani 🐛
+
+Matibabu ya Haraka:
+1. Nyunyiza maji yenye sabuni laini kwenye majani 🚿
+2. Tumia dawa ya wadudu (insecticide) inayopendekezwa 🌱
+3. Ondoa majani yaliyoathirika sana ✂️
+
+Kinga ya Baadaye:
+• Panda mimea rafiki kama kitunguu maji au coriander kuzuia aphids 🌿
+• Kagua mimea mara kwa mara na kuondoa wadudu mapem",
+2025-11-28T09:07:02.642Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili za ugonjwa zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum zinazohitajika
+2. Endelea kufuatilia mazao yako
+3. Wasilisha dalili zozote ukiziona
+
+Kinga ya Baadaye:
+• Hakikisha unafanya ukaguzi wa mara kwa mara kwenye shamba 🌱
+• Tumia mbegu bora na safi kila msimu 🌱",
+2025-11-28T09:07:22.820Z,anon,text_voice_query,Hakuna,,0.4,100,Kenya,0,"UGONJWA: Hakuna
+
+Hali ya Mazao:
+• Hakuna dalili zilizotajwa
+• Mazao yako yanaonekana salama
+
+Matibabu ya Haraka:
+1. Hakuna hatua maalum kwa sasa
+2. Endelea kufuatilia mazao yako
+3. Wasiliana tena ukiona dalili zozote
+
+Kinga ya Baadaye:
+• Kagua mazao mara kwa mara 🟢
+• Tumia mbinu bora za kilimo 🟢",
+2025-11-28T09:51:41.989Z,anon,text_voice_query,Tomato Blight (Kuoza kwa Nyanya),,0.4,100,Kenya,0,"UGONJWA: Tomato Blight (Kuoza kwa Nyanya)
+
+Hali ya Mazao:
+• Majani yanageuka rangi ya kahawia au njano 🍂
+• Madoa meusi kwenye majani na matunda 🍅⚫
+
+Matibabu ya Haraka:
+1. Ondoa na haribu majani yaliyoathirika 🗑️
+2. Nyunyiza dawa ya kuzuia fangasi kama copper fungicide 💧
+3. Hakikisha mimea ina hewa ya kutosha kwa kupunguza msongamano 🌬️
+
+Kinga ya Baadaye:
+• Panda mbegu bora zinazostahimili magonjwa 🌱
+• Epuka kumwagilia juu ya majani, tumia njia ya matone 🚿",
+2025-11-28T09:52:42.905Z,anon,image_diagnosis,Kuoza Majani (Leaf Blight) 🍂,,0.8,250,Kenya,0,"UGONJWA: Kuoza Majani (Leaf Blight) 🍂
+
+Hali ya Mazao:
+• Majani yana madoa ya kahawia pembezoni 🟤
+• Majani yanakauka na kupasuka upande wa madoa
+
+Matibabu ya Haraka:
+1. Ondoa majani yaliyoathirika shambani ✂️
+2. Nyunyiza dawa ya kuua fangasi kama Copper oxychloride au Mancozeb 🧪
+3. Hakikisha unyunyizia maji asubuhi au jioni, sio juu ya majani ☀️🌙
+
+Kinga ya Baadaye:
+• Panda mazao kwa nafasi ili hewa ipite vizuri 🍃
+• Epuka kumwagilia maji juu ya majani, tumia njia ya matone 🚿",
